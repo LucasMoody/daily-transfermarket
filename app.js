@@ -36,11 +36,26 @@ app.get('/comunio/dailytransfermarket', function (req, res) {
 	});
 });
 
+app.get('/comunio/getcomunioname', function (req, res) {
+	var userName = req.query.username;
+	if (!userName) {
+		res.sendStatus(400);
+		return;
+	}
+	comunio.getCommunityByUser(userName, function(err, comunioName) {
+		if(err) {
+			res.status(400).send(err.message);
+			return;
+		}
+		res.send(comunioName);
+	});
+});
+
 var server = app.listen(80, function () {
 
-  var host = server.address().address
-  var port = server.address().port
+  var host = server.address().address;
+  var port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port)
+  console.log('Example app listening at http://%s:%s', host, port);
 
 });

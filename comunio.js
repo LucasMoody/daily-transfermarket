@@ -3,20 +3,36 @@ var soap = require('soap'),
     moment = require('moment'),
     url = 'http://www.comunio.de/soapservice.php?wsdl',
     getMarketValueForPlayerAtDate = function(playerId, date, callback) {
-    var args = {playerid: playerId, date:date};
+      var args = {playerid: playerId, date:date};
       soap.createClient(url, function(err, client) {
           if(err) {
             callback(err);
           } else {
             client.getquote(args, function(err, result) {
                 if(!result.return || !result.return.$value) {
-                  callback(new Error('No data for date:' + date), {});
+                  callback(new Error('No data for date: ' + date), {});
                 } else {
                   callback(err, {quote : result.return.$value, date : date});
                 }
             });
           }
       });
+    },
+    getUserId = function(userName, callback) {
+      var args = {login : userName};
+      soap.createClient(url, function(err, client) {
+          if(err) {
+            callback(err);
+          } else {
+            client.getuserid(args, function(err, result) {
+              if(!result.return || !result.return.$value) {
+                  callback(new Error('No user id for user: ' + userName));
+                } else {
+                  callback(err, result.return.$value);
+                }
+            });
+          }
+      });  
     };
 
 exports.getMarketValueForPlayer = function(playerId, numDays, callback) {
@@ -107,5 +123,50 @@ exports.getUserGameDayPoints = function(userId, gameDayId, callback) {
       client.getuserslineupbygameday(args, function(err, result) {
         console.log(result);
       });
+  });
+};
+
+exports.getCommunityName = function(communityId, callback) {
+  var args = {communityid : communityId};
+  soap.createClient(url, function(err, client) {
+      client.getcommunityname(args, function(err, result) {
+        console.log(result);
+      });
+  });
+};
+
+exports.getCommunityByUser = function(userName, callback) {
+  getUserId(userName, function(err, userId) {
+    if(err) {
+      callback(err);
+    } else {
+      var args = {userid : userId};
+      soap.createClient(url, function(err, client) {
+          if(err) {
+            callback(err);
+          } else {
+            var deferred = [Q.defer(), Q.defer()];
+            client.getcommunityid(args, function(err, result) {
+              if(!result.return || !result.return.$value) {
+                deferred[0].reject(new Error('No community id for user id: ' + userId));
+              } else {
+                deferred[0].resolve(result.return.$value);
+              }
+            });
+            client.getcommunitynamebyuserid(args, function(err, result) {
+              if(!result.return || !result.return.$value) {
+                deferred[1].reject(new Error('No community name for user id: ' + userId));
+              } else {
+                deferred[1].resolve(result.return.$value);
+              }
+            });
+            Q.all([deferred[0].promise,deferred[1].promise]).then(function(results){
+              callback(undefined, {id : results[0], name : results[1]});
+            }).fail(function(err) {
+              callback(err);
+            });
+          }
+      });  
+    }
   });
 };
