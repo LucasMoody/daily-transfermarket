@@ -1,0 +1,900 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fe",
+				"feedparserconfig"
+			],
+			[
+				"c",
+				"console"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"cate",
+				"categories"
+			],
+			[
+				"prom",
+				"promiseResult"
+			],
+			[
+				"req",
+				"requestedUrl"
+			],
+			[
+				"reque",
+				"requestUrl"
+			],
+			[
+				"team",
+				"teamanalyse"
+			],
+			[
+				"re",
+				"response"
+			],
+			[
+				"game",
+				"gameDayId"
+			],
+			[
+				"head",
+				"header	Tag"
+			],
+			[
+				"he",
+				"header	Tag"
+			],
+			[
+				"lang",
+				"language"
+			],
+			[
+				"vote",
+				"voteDown"
+			],
+			[
+				"langu",
+				"languages"
+			],
+			[
+				"tr",
+				"trainPerc"
+			],
+			[
+				"calc",
+				"calcWordAccuriesMap"
+			],
+			[
+				"cal",
+				"calcWordAccuriesMap"
+			],
+			[
+				"por",
+				"probabilities"
+			],
+			[
+				"pre",
+				"predictions2"
+			],
+			[
+				"new",
+				"newClf"
+			],
+			[
+				"on",
+				"onlyInstruction"
+			],
+			[
+				"ex",
+				"ex31"
+			],
+			[
+				"start",
+				"startTime"
+			],
+			[
+				"resu",
+				"resultFileName"
+			],
+			[
+				"trai",
+				"trainFileName"
+			],
+			[
+				"st",
+				"startSVMClassifier"
+			],
+			[
+				"pro",
+				"probability"
+			],
+			[
+				"save",
+				"saveSparseArff"
+			],
+			[
+				"training",
+				"trainingFileString"
+			],
+			[
+				"wr",
+				"writeStreamIncoming"
+			],
+			[
+				"writ",
+				"writeStreamOutgoing"
+			],
+			[
+				"w",
+				"write"
+			],
+			[
+				"spw",
+				"spawnCallback"
+			],
+			[
+				"defe",
+				"deferred"
+			],
+			[
+				"pop",
+				"popHighestScorePendingURL"
+			],
+			[
+				"write",
+				"writeStream"
+			],
+			[
+				"body",
+				"bodyText"
+			],
+			[
+				"bod",
+				"bodyText"
+			],
+			[
+				"un",
+				"uniq"
+			],
+			[
+				"lan",
+				"langResult"
+			],
+			[
+				"fetch",
+				"fetchFinished"
+			],
+			[
+				"cur",
+				"curNoOfCrawlers"
+			],
+			[
+				"Eve",
+				"eventEmitter"
+			],
+			[
+				"moch",
+				"mochaTest"
+			],
+			[
+				"gr",
+				"grunt"
+			],
+			[
+				"ho",
+				"hostWithPort"
+			],
+			[
+				"hos",
+				"hostWithPort"
+			],
+			[
+				"replace",
+				"replaceDots"
+			],
+			[
+				"repl",
+				"replaceDots"
+			],
+			[
+				"repace",
+				"replaceDots"
+			],
+			[
+				"send",
+				"sendStatus"
+			],
+			[
+				"playerLin",
+				"playerLinkSet"
+			],
+			[
+				"getPla",
+				"getPlayerLinks"
+			],
+			[
+				"requ",
+				"request"
+			],
+			[
+				"url",
+				"url_ligainsider"
+			],
+			[
+				"def",
+				"deferred"
+			],
+			[
+				"days",
+				"daysArray"
+			],
+			[
+				"result",
+				"resultArray"
+			],
+			[
+				"ls",
+				"ls_symbols"
+			],
+			[
+				"cl",
+				"close"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 1647,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "testcomunio.js",
+			"settings":
+			{
+				"buffer_size": 191,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db.sql",
+			"settings":
+			{
+				"buffer_size": 1388,
+				"line_ending": "Unix",
+				"name": "/* Creating the database and naming it comunio*/"
+			}
+		},
+		{
+			"file": "test.js",
+			"settings":
+			{
+				"buffer_size": 142,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "news.js",
+			"settings":
+			{
+				"buffer_size": 4624,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "news/rss_news/rss.js",
+			"settings":
+			{
+				"buffer_size": 1614,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "news/rss_news/server.js",
+			"settings":
+			{
+				"buffer_size": 814,
+				"line_ending": "Unix",
+				"name": "server.js"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 159.0,
+		"last_filter": "pretty",
+		"selected_items":
+		[
+			[
+				"pretty",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"format",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"Package Control ",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"Package Contro",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"jsl",
+				"Build With: JSLint"
+			],
+			[
+				"jsli",
+				"JSLint"
+			],
+			[
+				"sft",
+				"SFTP: Browse Server…"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/lucas/Development/projects/dailytransfermarket",
+		"/home/lucas/Development/projects/dailytransfermarket/news",
+		"/home/lucas/Development/projects/dailytransfermarket/news/rss_news",
+		"/home/lucas/Development/projects/dailytransfermarket/node_modules"
+	],
+	"file_history":
+	[
+		"/home/lucas/Development/projects/dailytransfermarket/comunio.js",
+		"/home/lucas/Development/projects/dailytransfermarket/rss.js",
+		"/home/lucas/Development/projects/dailytransfermarket/node_modules/testcomunio.js",
+		"/home/lucas/Development/projects/workspace/wm-ex5/data/Continent.json",
+		"/home/lucas/Development/projects/workspace/wm-ex5/data/Dictator random.json",
+		"/home/lucas/Development/projects/workspace/wm-ex5/data/Dictator.json",
+		"/home/lucas/Development/projects/meteor/microscope/client/helpers/config.js",
+		"/home/lucas/Development/projects/meteor/microscope/client/templates/application/layout.html",
+		"/home/lucas/Development/projects/meteor/microscope/client/templates/application/layout.js",
+		"/home/lucas/Development/projects/meteor/microscope/client/templates/application/not_found.html",
+		"/home/lucas/Development/projects/meteor/microscope/client/templates/posts/post_page.html",
+		"/home/lucas/Development/projects/meteor/microscope/client/templates/includes/loading.html",
+		"/home/lucas/Development/projects/meteor/microscope/lib/router.js",
+		"/home/lucas/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/lucas/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+		"/home/lucas/Development/projects/meteor/microscope/client/main.js",
+		"/home/lucas/Development/projects/meteor/microscope/.jshintrc",
+		"/home/lucas/Development/projects/meteor/microscope/microscope.sublime-project",
+		"/home/lucas/Development/projects/meteor/microscope/server/publications.js",
+		"/home/lucas/Development/projects/meteor/microscope/client/main.html",
+		"/home/lucas/Development/projects/meteor/microscope/client/templates/posts/posts_list.html",
+		"/home/lucas/Development/projects/meteor/microscope/client/templates/posts/post_item.html",
+		"/home/lucas/Development/projects/meteor/microscope/client/templates/posts/posts_list.js",
+		"/home/lucas/Development/projects/meteor/microscope/client/templates/posts/post_item.js",
+		"/home/lucas/Development/projects/meteor/microscope/lib/collections/posts.js",
+		"/home/lucas/Development/projects/meteor/microscope/server/fixtures.js",
+		"/home/lucas/Development/projects/meteor/microscope/client/stylesheets/styles.css",
+		"/home/lucas/Development/projects/meteor/microscope/main.js",
+		"/home/lucas/Development/projects/meteor/microscope/microscope.css",
+		"/home/lucas/Development/projects/workspace/wm-ue4/ex3.txt",
+		"/home/lucas/Development/projects/meteor/meteor-demo/meteor-demo.html",
+		"/home/lucas/Development/projects/meteor/meteor-demo/meteor-demo.coffee",
+		"/home/lucas/Development/projects/meteor/simple-todos/simple-todos.html",
+		"/home/lucas/Development/projects/meteor/simple-todos/simple-todos.js",
+		"/home/lucas/Development/projects/meteor/simple-todos/simple-todos.css",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/classifier/svm.js",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/dbconnection/mongo-con.js",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/server.js",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/textkit/textkit.js",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/textkit/results/ex2.txt",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/Ex3-5.txt",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/classifier/result/undefined",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/classifier/data/recipes-test-50.arff",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/classifier/data/recipes-test-50.ds",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/classifier/data/recipes-test-10.arff",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/classifier/data/recipes-train-300.ds",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/classifier/data/recipes-train-300.arff",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/classifier/data/recipes-test-160.arff",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/classifier/data/recipes-test-160.ds",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/scraper/scraper.js",
+		"/home/lucas/Development/projects/pocahontas/pocahontas/data/lshtc_train_mulan_very_small.arff",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/classifier/data/recipes-test-300.arff",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/package.json",
+		"/home/lucas/Development/projects/web-mining/wm-ue3/src/classifier/data/test.ds",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/src/DBConnection/mongoCon.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/src/Analysis/mongoexport.js",
+		"/home/lucas/Development/Probleme.txt",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/src/Crawler/schedulerEx2.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/src/Analysis/statistics.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/src/Analysis/timeanalysis.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/src/Crawler/schedulerEx3.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/src/Crawler/fetch.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/dist/DBConnection/mongoCon.js",
+		"/home/lucas/Development/projects/web-mining/Excercises.txt",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/src/DBConnection/redisCon.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/src/Analysis/network.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/Gruntfile.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/src/DBConnection/models/webpage.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/src/Crawler/scheduler.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/package.json",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/src/Crawler/test/test.js",
+		"/home/lucas/.config/sublime-text-3/Packages/JSLint/JSLint.sublime-settings",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/Notes.txt",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/Crawler/fetch.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/Crawler/scheduler.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/dist/Crawler/fetch.js",
+		"/home/lucas/Development/projects/web-mining/wm-ex2/Crawler/test/fetch-test.js",
+		"/home/lucas/Development/projects/dailytransfermarket/news.js",
+		"/home/lucas/Development/projects/dailytransfermarket/test.js",
+		"/home/lucas/Downloads/LSHTC4_mulan/lshtc_train_mulan.arff",
+		"/home/lucas/Downloads/LSHTC4_mulan/lshtc_train_mulan_very_small.arff",
+		"/home/lucas/Development/projects/dailytransfermarket/mongoose-connector.js",
+		"/home/lucas/Development/projects/dailytransfermarket/app.js",
+		"/home/lucas/CloudStation/Uni/DSS/Zusammenfassung.tex",
+		"/home/lucas/Development/projects/dailytransfermarket/mongodb-connector.js",
+		"/home/lucas/Downloads/LSHTC4_mulan/lshtc_train_mulan (copy).arff",
+		"/var/wordpress-4.1.1-0/apps/wordpress/htdocs/wp-content/plugins/so-widgets-bundle/widgets/so-features-widget/so-features-widget.php",
+		"/var/wordpress-4.1.1-0/apps/wordpress/htdocs/wp-content/plugins/so-widgets-bundle/widgets/so-features-widget/tpl/base.php",
+		"/home/lucas/Development/projects/dailytransfermarket/package.json",
+		"/home/lucas/Development/projects/dailytransfermarket/db-connector.js",
+		"/home/lucas/Development/projects/comunio/db-connector.js",
+		"/home/lucas/Development/projects/dailytransfermarket/sftp-config.json",
+		"/home/lucas/Development/projects/Moment.js Tests/app.js",
+		"/home/lucas/Development/projects/Moment.js Tests/moment.js",
+		"/home/lucas/Development/projects/comunio/index.html",
+		"/home/lucas/Development/projects/MyDart/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/aidl/android/support/v4/app/INotificationSideChannel.aidl",
+		"/home/lucas/Development/projects/MyDart/app/build/intermediates/res/debug/drawable-hdpi-v4/score_text_view.xml",
+		"/home/lucas/Development/projects/MyDart/app/build/intermediates/res/debug/layout/fragment_statistics.xml",
+		"/home/lucas/Development/projects/MyDart/app/build/intermediates/res/debug/color/abc_secondary_text_material_light.xml",
+		"/home/lucas/.config/sublime-text-3/Packages/User/sftp_servers/lucaspradel.de"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"url_liga",
+			"content\": \"\"",
+			"continent\": \"\"",
+			"Content\": \"\"",
+			"https://en.wikipedia.org/wiki/Single-party_state",
+			"single-party state",
+			"\\n",
+			"svm",
+			"console.log",
+			"val",
+			"console",
+			"301",
+			"xreg",
+			"instructions",
+			"ínstructions",
+			"ínstru",
+			"remove",
+			"instructions",
+			"e1a38dd8acbb7ae9e6de840d6f229d996a06a1d5",
+			"=======\n",
+			"callback",
+			"console.log",
+			"/./../\"));\n",
+			"curpath",
+			"return",
+			"each",
+			");\n",
+			"80",
+			");\n",
+			"lucas",
+			"resolve"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\\\n",
+			"\\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "testcomunio.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 191,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								159,
+								159
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "db.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1388,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1387,
+								1387
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/* Creating the database and naming it comunio*/",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/SQL/SQL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								142
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "news.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4624,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1227,
+								1227
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1980.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "news/rss_news/rss.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1614,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33,
+								33
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "news/rss_news/server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								134,
+								134
+							]
+						],
+						"settings":
+						{
+							"auto_name": "server.js",
+							"incomplete_sync": null,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 206.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 112.0
+	},
+	"pinned_build_system": "",
+	"project": "dailytransfermarket.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"testc",
+				"testcomunio.js"
+			],
+			[
+				"app",
+				"app.js"
+			],
+			[
+				"co",
+				"comunio.js"
+			],
+			[
+				"layout",
+				"client/templates/application/layout.html"
+			],
+			[
+				"post_page",
+				"client/templates/posts/post_page.html"
+			],
+			[
+				"post_ite",
+				"client/templates/posts/post_item.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 1155.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 349.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
