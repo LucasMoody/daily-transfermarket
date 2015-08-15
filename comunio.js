@@ -170,3 +170,21 @@ exports.getCommunityByUser = function(userName, callback) {
     }
   });
 };
+
+exports.getPlayerGameDayPoints = function(playerId, gameDayId, callback) {
+  var args = {playerid : playerId, gameday : gameDayId};
+  soap.createClient(url, function(err, client) {
+      client.getplayergamedaypoints(args, function(err, result) {
+        console.log(result);
+      });
+  });
+}
+
+exports.getGameDays = function(callback) {
+  var args = {};
+  soap.createClient(url, function(err, client) {
+      client.getgamedays(null, function(err, result) {
+        console.log(result);
+      });
+  });
+}

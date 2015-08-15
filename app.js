@@ -1,7 +1,8 @@
 var comunio = require('./comunio.js'),
 	Q = require('q'),
 	express = require('express'),
-	app = express();
+	app = express(),
+	news = require('./news.js');
 app.get('/comunio/dailytransfermarket', function (req, res) {
 	var comunioid = req.query.comunioid,
 		days = req.query.days,
@@ -49,6 +50,15 @@ app.get('/comunio/getcomunioname', function (req, res) {
 		}
 		res.send(comunioName);
 	});
+});
+
+app.get('/comunio/playernews', function (req, res) {
+	var playerName = req.query.playername;
+	if(!playerName) {
+		res.sendStatus(400);
+		return;
+	}
+	news.
 });
 
 var server = app.listen(80, function () {
