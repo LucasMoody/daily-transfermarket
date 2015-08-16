@@ -3,13 +3,17 @@ var Sequelize = require('sequelize'),
 	sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
 		dialect: dbConfig.dialect,
 		host: dbConfig.host,
-		port: dbConfig.port
+		port: dbConfig.port,
+		logging: dbConfig.logging
 	});
 
 var Clubs = sequelize.define('clubs', {
 	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-	clubname: { type: Sequelize.STRING(40),  allowNull: false},
+	clubname: { type: Sequelize.STRING(40),  allowNull: false },
 	comclubid: { type: Sequelize.INTEGER, allowNull: false }
+},{
+	collate: 'utf8_general_ci',
+	charset: 'utf8'
 });
 
 var Players = sequelize.define('players', {
@@ -18,13 +22,19 @@ var Players = sequelize.define('players', {
 	name: { type: Sequelize.STRING(40), allowNull: false },
 	position: { type: Sequelize.STRING(40), allowNull: false },
 	clubid: { type: Sequelize.INTEGER, references: { model: Clubs, key: 'id' } }
+},{
+	collate: 'utf8_general_ci',
+	charset: 'utf8'
 });
 
 var MarketValues = sequelize.define('marketvalues', {
 	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-	pid: { type: Sequelize.INTEGER, references: { model: Players, key: 'id' } }
-,	value: { type: Sequelize.INTEGER, allowNull: false },
+	pid: { type: Sequelize.INTEGER, references: { model: Players, key: 'id' } },
+	value: { type: Sequelize.INTEGER, allowNull: false },
 	valdate: { type: Sequelize.DATE, allowNull: false }
+},{
+	collate: 'utf8_general_ci',
+	charset: 'utf8'
 });
 
 var Injuries = sequelize.define('injuries', {
@@ -32,6 +42,9 @@ var Injuries = sequelize.define('injuries', {
 	pid: { type: Sequelize.INTEGER, references: { model: Players, key: 'id' } },
 	status: { type: Sequelize.STRING(40), allowNull: false },
 	statusinfo: { type: Sequelize.STRING }
+},{
+	collate: 'utf8_general_ci',
+	charset: 'utf8'
 });
 
 var PlayerNews = sequelize.define('playernews', {
@@ -43,7 +56,15 @@ var PlayerNews = sequelize.define('playernews', {
 	pid: { type: Sequelize.INTEGER, references: { model: Players, key: 'id' } }
 });
 
-sequelize.sync();
+/*function sync() {
+	return sequelize.drop().then(function() {
+		return sequelize.sync({force:true});
+	});
+}*/
+
+function sync() {
+	return sequelize.sync({force:true});
+};
 //TODO catch
 
 module.exports = {
@@ -51,5 +72,8 @@ module.exports = {
 	Players: Players,
 	MarketValues: MarketValues,
 	Injuries: Injuries,
-	PlayerNews: PlayerNews
+	PlayerNews: PlayerNews,
+	functions: {
+		sync: sync
+	}
 }

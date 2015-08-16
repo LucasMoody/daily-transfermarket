@@ -76,26 +76,27 @@ exports.getMarketValueForPlayer = function(playerId, numDays, callback) {
 };
 
 
-exports.getPlayersByClubId = function(id, callback) {
-  var args = {name: id};
-  soap.createClient(url, function(err, client) {
-      client.getplayersbyclubid(args, function(err, result) {
-          var player, attribute, players = [], curPlayer = {};
-          for (player in result.return.item) {
-            for (attribute in result.return.item[player]) {
-              if (result.return.item[player][attribute].$value) {
-
-                curPlayer[attribute] = !isNaN(parseInt(result.return.item[player][attribute].$value)) ? 
-                  parseInt(result.return.item[player][attribute].$value) : result.return.item[player][attribute].$value;
-              }
-            }
-            curPlayer.date = new Date();
-            players.push(curPlayer);
-            curPlayer = {};
-          }
-          callback(players);
-      });
-  });
+exports.getPlayersByClubId = function(id) {
+	var args = {name: id};
+	Q.nfcall(soap.createClient, url)
+	.then(function(client) {
+		return Q.nfcall(client.getplayersbyclubid, args);
+	})
+	.then(function(result) {
+		var player, attribute, players = [], curPlayer = {};
+		for (player in result.return.item) {
+			for (attribute in result.return.item[player]) {
+				if (result.return.item[player][attribute].$value) {
+					curPlayer[attribute] = !isNaN(parseInt(result.return.item[player][attribute].$value)) ?
+						parseInt(result.return.item[player][attribute].$value) : result.return.item[player][attribute].$value;
+				}
+			}
+			curPlayer.date = new Date();
+			players.push(curPlayer);
+			curPlayer = {};
+		}
+		return players;
+	});
 };
 
 exports.getCommunityMarket = function(communityId, callback) {

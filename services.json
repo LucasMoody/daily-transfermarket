@@ -1,0 +1,8 @@
+{
+  dbService: {
+    port: 10102
+  },
+  comunioService: {
+    port: 10103
+  }
+}

@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"fun",
+				"function"
+			],
+			[
+				"s",
+				"Sequelize"
+			],
+			[
+				"mo",
+				"modelOptions"
+			],
+			[
+				"op",
+				"options"
+			],
+			[
+				"cl",
+				"clubsModel"
+			],
+			[
+				"m",
+				"models"
+			],
+			[
+				"pr",
+				"promises"
+			],
+			[
+				"cate",
+				"category"
+			],
+			[
+				"play",
+				"playerNames"
+			],
+			[
+				"add",
+				"addNews"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
 				"fe",
 				"feedparserconfig"
 			],
@@ -14,10 +58,6 @@
 			[
 				"res",
 				"result"
-			],
-			[
-				"cate",
-				"categories"
 			],
 			[
 				"prom",
@@ -242,53 +282,58 @@
 			[
 				"ls",
 				"ls_symbols"
-			],
-			[
-				"cl",
-				"close"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app.js",
+			"file": "database/models.js",
 			"settings":
 			{
-				"buffer_size": 1647,
+				"buffer_size": 2026,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "testcomunio.js",
+			"file": "database/tests/test.js",
 			"settings":
 			{
-				"buffer_size": 191,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "db.sql",
-			"settings":
-			{
-				"buffer_size": 1388,
+				"buffer_size": 1756,
 				"line_ending": "Unix",
-				"name": "/* Creating the database and naming it comunio*/"
+				"name": "test.js"
 			}
 		},
 		{
-			"file": "test.js",
+			"file": "database/api/db-api.js",
 			"settings":
 			{
-				"buffer_size": 142,
+				"buffer_size": 2005,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "news.js",
+			"file": "database/api/server.js",
 			"settings":
 			{
-				"buffer_size": 4624,
+				"buffer_size": 287,
+				"line_ending": "Unix",
+				"name": "server.js"
+			}
+		},
+		{
+			"file": "database/tests/init-models.js",
+			"settings":
+			{
+				"buffer_size": 2250,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "comunio/comunio.js",
+			"settings":
+			{
+				"buffer_size": 6766,
 				"line_ending": "Unix"
 			}
 		},
@@ -296,17 +341,8 @@
 			"file": "news/rss_news/rss.js",
 			"settings":
 			{
-				"buffer_size": 1614,
+				"buffer_size": 1654,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "news/rss_news/server.js",
-			"settings":
-			{
-				"buffer_size": 814,
-				"line_ending": "Unix",
-				"name": "server.js"
 			}
 		}
 	],
@@ -384,12 +420,37 @@
 	"expanded_folders":
 	[
 		"/home/lucas/Development/projects/dailytransfermarket",
+		"/home/lucas/Development/projects/dailytransfermarket/comunio",
+		"/home/lucas/Development/projects/dailytransfermarket/database",
+		"/home/lucas/Development/projects/dailytransfermarket/database/api",
+		"/home/lucas/Development/projects/dailytransfermarket/database/tests",
 		"/home/lucas/Development/projects/dailytransfermarket/news",
-		"/home/lucas/Development/projects/dailytransfermarket/news/rss_news",
-		"/home/lucas/Development/projects/dailytransfermarket/node_modules"
+		"/home/lucas/Development/projects/dailytransfermarket/news/rss_news"
 	],
 	"file_history":
 	[
+		"/home/lucas/Development/projects/dailytransfermarket/database/inits/init-models.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/tests/init-models.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/db-config.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/db-connection.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/inits/init-models-for-test.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/init-models.js",
+		"/home/lucas/Development/projects/dailytransfermarket/news/rss_news/server.js",
+		"/home/lucas/Development/projects/dailytransfermarket/comunio/api/comunio-api.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/api/db-api.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/api/dbapi.js",
+		"/home/lucas/Development/projects/dailytransfermarket/db.sql",
+		"/home/lucas/Development/projects/dailytransfermarket/comunio/package.json",
+		"/home/lucas/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/lucas/Development/projects/dailytransfermarket/testcomunio.js",
+		"/home/lucas/Development/projects/dailytransfermarket/app.js",
+		"/home/lucas/Development/projects/dailytransfermarket/test.js",
+		"/home/lucas/Development/projects/dailytransfermarket/news.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/package.json",
+		"/home/lucas/Development/projects/dailytransfermarket/database/models.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/models/models.js",
+		"/home/lucas/Development/projects/dailytransfermarket/news/rss_news/.gitignore",
+		"/home/lucas/Development/projects/dailytransfermarket/news/rss_news/package.json",
 		"/home/lucas/Development/projects/dailytransfermarket/comunio.js",
 		"/home/lucas/Development/projects/dailytransfermarket/rss.js",
 		"/home/lucas/Development/projects/dailytransfermarket/node_modules/testcomunio.js",
@@ -467,12 +528,9 @@
 		"/home/lucas/Development/projects/web-mining/wm-ex2/Crawler/scheduler.js",
 		"/home/lucas/Development/projects/web-mining/wm-ex2/dist/Crawler/fetch.js",
 		"/home/lucas/Development/projects/web-mining/wm-ex2/Crawler/test/fetch-test.js",
-		"/home/lucas/Development/projects/dailytransfermarket/news.js",
-		"/home/lucas/Development/projects/dailytransfermarket/test.js",
 		"/home/lucas/Downloads/LSHTC4_mulan/lshtc_train_mulan.arff",
 		"/home/lucas/Downloads/LSHTC4_mulan/lshtc_train_mulan_very_small.arff",
 		"/home/lucas/Development/projects/dailytransfermarket/mongoose-connector.js",
-		"/home/lucas/Development/projects/dailytransfermarket/app.js",
 		"/home/lucas/CloudStation/Uni/DSS/Zusammenfassung.tex",
 		"/home/lucas/Development/projects/dailytransfermarket/mongodb-connector.js",
 		"/home/lucas/Downloads/LSHTC4_mulan/lshtc_train_mulan (copy).arff",
@@ -504,9 +562,19 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			" });",
+			"Clubs.findOrCreate({ where: { clubname: ",
+			"Clubs.findOrCreate ",
+			"Clubs.findOrCreate\\({ where: { clubname: ",
+			"Clubs.findOrCreate({ where: { clubname: ",
+			"Integer",
+			"Date",
+			"String",
+			"done",
+			"callback",
 			"url_liga",
 			"content\": \"\"",
 			"continent\": \"\"",
@@ -542,9 +610,13 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
+			"",
+			"INTEGER",
+			"DATE",
+			"STRING",
 			"\\\\n",
 			"\\n"
 		],
@@ -557,56 +629,24 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app.js",
+					"file": "database/models.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1647,
+						"buffer_size": 2026,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "testcomunio.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 191,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								159,
-								159
+								872,
+								872
 							]
 						],
 						"settings":
@@ -620,33 +660,33 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "db.sql",
+					"buffer": 1,
+					"file": "database/tests/test.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1388,
+						"buffer_size": 1756,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1387,
-								1387
+								122,
+								122
 							]
 						],
 						"settings":
 						{
-							"auto_name": "/* Creating the database and naming it comunio*/",
+							"auto_name": "test.js",
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/SQL/SQL.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -657,24 +697,57 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "test.js",
+					"buffer": 2,
+					"file": "database/api/db-api.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 142,
+						"buffer_size": 2005,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								142,
-								142
+								278,
+								278
 							]
 						],
 						"settings":
 						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "database/api/server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 287,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								283,
+								283
+							]
+						],
+						"settings":
+						{
+							"auto_name": "server.js",
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
@@ -689,19 +762,19 @@
 				},
 				{
 					"buffer": 4,
-					"file": "news.js",
+					"file": "database/tests/init-models.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4624,
+						"buffer_size": 2250,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1227,
-								1227
+								1654,
+								1654
 							]
 						],
 						"settings":
@@ -713,27 +786,64 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1980.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "news/rss_news/rss.js",
+					"file": "comunio/comunio.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1614,
+						"buffer_size": 6766,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								33,
-								33
+								3941,
+								3941
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1125.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "news/rss_news/rss.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1654,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								434,
+								434
+							],
+							[
+								1309,
+								1309
 							]
 						],
 						"settings":
@@ -744,40 +854,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 22.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "news/rss_news/server.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 814,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								134,
-								134
-							]
-						],
-						"settings":
-						{
-							"auto_name": "server.js",
-							"incomplete_sync": null,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -830,7 +910,7 @@
 	"project": "dailytransfermarket.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -839,6 +919,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"db-ci",
+				"database/db-config.js"
+			],
+			[
+				"db-ap",
+				"database/api/db-api.js"
+			],
+			[
+				"db",
+				"db.sql"
+			],
 			[
 				"testc",
 				"testcomunio.js"

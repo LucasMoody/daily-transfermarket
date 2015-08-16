@@ -1,6 +1,8 @@
 var rss = require('./rss.js'),
 	FeedParser = require('feedparser'),
+	seneca = require('seneca')(),
 	kickerRssUrl = 'http://rss.kicker.de/news/bundesliga';
+var dbService = seneca.client(10102);
 
 function fetchKickerFeeds() {
 	var feedparser = new FeedParser(),
@@ -8,9 +10,15 @@ function fetchKickerFeeds() {
 
 	feedparser.on('error', done);
 	feedparser.on('end', function() {
-		// TODO save in db
-		console.log(result);
-		process.exit();
+		dbService.act({role:'database',news:'add',data:result},function(err, res) {
+			if(err) {
+				//TODO something bad happened
+				console.error(err);
+			} else {
+				console.log(res);
+			}
+			process.exit();
+		});
 	});
 
 	feedparser.on('readable', function() {
