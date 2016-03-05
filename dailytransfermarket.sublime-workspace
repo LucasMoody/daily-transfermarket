@@ -287,64 +287,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "database/models.js",
-			"settings":
-			{
-				"buffer_size": 2026,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/tests/test.js",
-			"settings":
-			{
-				"buffer_size": 1756,
-				"line_ending": "Unix",
-				"name": "test.js"
-			}
-		},
-		{
-			"file": "database/api/db-api.js",
-			"settings":
-			{
-				"buffer_size": 2005,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/api/server.js",
-			"settings":
-			{
-				"buffer_size": 287,
-				"line_ending": "Unix",
-				"name": "server.js"
-			}
-		},
-		{
-			"file": "database/tests/init-models.js",
-			"settings":
-			{
-				"buffer_size": 2250,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "comunio/comunio.js",
-			"settings":
-			{
-				"buffer_size": 6766,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "news/rss_news/rss.js",
-			"settings":
-			{
-				"buffer_size": 1654,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -353,17 +295,29 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 159.0,
-		"last_filter": "pretty",
+		"height": 75.0,
+		"last_filter": "filedi",
 		"selected_items":
 		[
 			[
-				"pretty",
-				"Pretty JSON: Format (Pretty Print) JSON"
+				"filedi",
+				"FileDiffs: Menu"
 			],
 			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"latex",
+				"Build With: LaTeX"
+			],
+			[
+				"pretty",
+				"Pretty JSON: Format (Pretty Print) JSON"
 			],
 			[
 				"format",
@@ -420,6 +374,7 @@
 	"expanded_folders":
 	[
 		"/home/lucas/Development/projects/dailytransfermarket",
+		"/home/lucas/Development/projects/dailytransfermarket/.idea",
 		"/home/lucas/Development/projects/dailytransfermarket/comunio",
 		"/home/lucas/Development/projects/dailytransfermarket/database",
 		"/home/lucas/Development/projects/dailytransfermarket/database/api",
@@ -429,15 +384,28 @@
 	],
 	"file_history":
 	[
-		"/home/lucas/Development/projects/dailytransfermarket/database/inits/init-models.js",
+		"/home/lucas/Development/koans/src/test/scala/org/functionalkoans/forscala/AboutClasses.scala",
+		"/home/lucas/Development/koans/src/test/scala/org/functionalkoans/forscala/AboutLiteralBooleans.scala",
+		"/home/lucas/Development/koans/src/test/scala/org/functionalkoans/forscala/AboutLiteralNumbers.scala",
+		"/home/lucas/Development/koans/src/test/scala/org/functionalkoans/forscala/AboutValAndVar.scala",
+		"/home/lucas/Development/projects/pocahontas/pocahontas/data/filtered.arff",
+		"/home/lucas/Development/koans/src/test/scala/org/functionalkoans/forscala/AboutAsserts.scala",
+		"/home/lucas/Development/projects/dailytransfermarket/news/rss_news/rss.js",
+		"/home/lucas/Development/projects/dailytransfermarket/comunio/comunio.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/models.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/tests/test.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/api/db-api.js",
+		"/home/lucas/Development/projects/dailytransfermarket/database/api/server.js",
 		"/home/lucas/Development/projects/dailytransfermarket/database/tests/init-models.js",
+		"/home/lucas/CloudStation/Uni/Unternehmensarchitekturmanagement/Zusammenfassung/Zusammenfassung.tex",
+		"/home/lucas/Desktop/untitled.html",
+		"/home/lucas/Development/projects/dailytransfermarket/database/inits/init-models.js",
 		"/home/lucas/Development/projects/dailytransfermarket/database/db-config.js",
 		"/home/lucas/Development/projects/dailytransfermarket/database/db-connection.js",
 		"/home/lucas/Development/projects/dailytransfermarket/database/inits/init-models-for-test.js",
 		"/home/lucas/Development/projects/dailytransfermarket/database/init-models.js",
 		"/home/lucas/Development/projects/dailytransfermarket/news/rss_news/server.js",
 		"/home/lucas/Development/projects/dailytransfermarket/comunio/api/comunio-api.js",
-		"/home/lucas/Development/projects/dailytransfermarket/database/api/db-api.js",
 		"/home/lucas/Development/projects/dailytransfermarket/database/api/dbapi.js",
 		"/home/lucas/Development/projects/dailytransfermarket/db.sql",
 		"/home/lucas/Development/projects/dailytransfermarket/comunio/package.json",
@@ -447,7 +415,6 @@
 		"/home/lucas/Development/projects/dailytransfermarket/test.js",
 		"/home/lucas/Development/projects/dailytransfermarket/news.js",
 		"/home/lucas/Development/projects/dailytransfermarket/database/package.json",
-		"/home/lucas/Development/projects/dailytransfermarket/database/models.js",
 		"/home/lucas/Development/projects/dailytransfermarket/database/models/models.js",
 		"/home/lucas/Development/projects/dailytransfermarket/news/rss_news/.gitignore",
 		"/home/lucas/Development/projects/dailytransfermarket/news/rss_news/package.json",
@@ -544,10 +511,7 @@
 		"/home/lucas/Development/projects/Moment.js Tests/moment.js",
 		"/home/lucas/Development/projects/comunio/index.html",
 		"/home/lucas/Development/projects/MyDart/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/aidl/android/support/v4/app/INotificationSideChannel.aidl",
-		"/home/lucas/Development/projects/MyDart/app/build/intermediates/res/debug/drawable-hdpi-v4/score_text_view.xml",
-		"/home/lucas/Development/projects/MyDart/app/build/intermediates/res/debug/layout/fragment_statistics.xml",
-		"/home/lucas/Development/projects/MyDart/app/build/intermediates/res/debug/color/abc_secondary_text_material_light.xml",
-		"/home/lucas/.config/sublime-text-3/Packages/User/sftp_servers/lucaspradel.de"
+		"/home/lucas/Development/projects/MyDart/app/build/intermediates/res/debug/drawable-hdpi-v4/score_text_view.xml"
 	],
 	"find":
 	{
@@ -565,6 +529,12 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"statis",
+			"stat",
+			"calculate",
+			"rightarr",
+			"image",
+			"&",
 			" });",
 			"Clubs.findOrCreate({ where: { clubname: ",
 			"Clubs.findOrCreate ",
@@ -629,237 +599,8 @@
 	"groups":
 	[
 		{
-			"selected": 4,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "database/models.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2026,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								872,
-								872
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "database/tests/test.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1756,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								122,
-								122
-							]
-						],
-						"settings":
-						{
-							"auto_name": "test.js",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "database/api/db-api.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2005,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								278,
-								278
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "database/api/server.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 287,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								283,
-								283
-							]
-						],
-						"settings":
-						{
-							"auto_name": "server.js",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "database/tests/init-models.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2250,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1654,
-								1654
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "comunio/comunio.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6766,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3941,
-								3941
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1125.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "news/rss_news/rss.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1654,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								434,
-								434
-							],
-							[
-								1309,
-								1309
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 22.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -896,7 +637,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 206.0
+		"height": 78.0
 	},
 	"output.find_results":
 	{

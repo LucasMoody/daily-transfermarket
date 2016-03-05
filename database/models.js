@@ -51,7 +51,7 @@ var PlayerNews = sequelize.define('playernews', {
 	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
 	link: { type: Sequelize.STRING },
 	headline: { type: Sequelize.STRING },
-	newstext: { type: Sequelize.STRING },
+	newstext: { type: Sequelize.STRING(2048) },
 	newsdate: { type: Sequelize.DATE, allowNull: false },
 	pid: { type: Sequelize.INTEGER, references: { model: Players, key: 'id' } }
 });

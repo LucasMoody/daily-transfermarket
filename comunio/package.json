@@ -1,0 +1,24 @@
+{
+  "name": "comunio",
+  "version": "0.2.0",
+  "description": "This is the comunio library which gives you an interface to data from www.comunio.de.",
+  "main": "comunio.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "comunio"
+  ],
+  "author": "Lucas Pradel",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.2.0",
+    "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "moment": "^2.10.6",
+    "q": "^1.4.1",
+    "soap": "^0.11.1"
+  }
+}

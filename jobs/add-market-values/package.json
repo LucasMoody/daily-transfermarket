@@ -1,0 +1,9 @@
+{
+  "name": "add-player-market-values",
+  "version": "0.1.0",
+  "dependencies": {
+    "comunio": "file:../../comunio/",
+    "q": "*",
+    "seneca": "*"
+  }
+}
