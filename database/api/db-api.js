@@ -101,6 +101,12 @@ function addPlayerValues (msg, respond) {
 	if (!values) {
 		return respond(new Error('The value property of data should be an array containing {quote: Integer, valdate: Date} objects'));
 	}
+	const keysCorrect = values.reduce((previous, next) => {
+		return previous && next.quote != undefined && next.valdate != undefined;
+	}, true);
+	if(!keysCorrect) {
+		return respond(new Error('The value property of data should be an array containing {quote: Integer, valdate: Date} objects'));
+	}
 
 	dbConnection.addPlayerValues(playerId, values)
 		.then(status => respond(null, status))
