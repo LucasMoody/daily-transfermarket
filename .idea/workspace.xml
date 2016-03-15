@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae03766a-66be-4b8a-b42e-37aee319ce02" name="Default" comment="Inititialization of models works now. Service for adding news, get comunio players works.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/comunio/comunio.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/comunio/test/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/lib/db-connection.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/tests/init-db.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/tests/player-dummy-data.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/tools/getDummyData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jobs/add-market-values/add-market-values.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jobs/add-market-values/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/news/ligainsider/ligainsider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/news/ligainsider/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rating/scraper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rating/server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/transfermarket/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/transfermarket/server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/transfermarket/transfermarket-api.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/comunio/api/server.js" afterPath="$PROJECT_DIR$/comunio-neu/api/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comunio.js" afterPath="$PROJECT_DIR$/comunio.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dailytransfermarket.sublime-project" afterPath="$PROJECT_DIR$/dailytransfermarket.sublime-project" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dailytransfermarket.sublime-workspace" afterPath="$PROJECT_DIR$/dailytransfermarket.sublime-workspace" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/models.js" afterPath="$PROJECT_DIR$/database/models.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news.js" afterPath="$PROJECT_DIR$/news.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news/rss_news/.gitignore" afterPath="$PROJECT_DIR$/news/rss_news/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news/rss_news/package.json" afterPath="$PROJECT_DIR$/news/rss_news/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news/rss_news/rss.js" afterPath="$PROJECT_DIR$/news/rss_news/rss.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news/rss_news/server.js" afterPath="$PROJECT_DIR$/news/rss_news/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services.json" afterPath="$PROJECT_DIR$/services.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dailytransfermarket.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,41 +23,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/tests/test.js">
+      <file leaf-file-name="add-market-values.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44514108">
-              <caret line="615" column="30" selection-start-line="615" selection-start-column="30" selection-end-line="615" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db-api.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="add-player-points.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jobs/add-player-points/add-player-points.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jobs/add-player-points/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db-api.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/api/db-api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="80" column="30" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="seneca.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/node_modules/seneca/seneca.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1146" column="15" selection-start-line="1146" selection-start-column="15" selection-end-line="1146" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db-connection.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/lib/db-connection.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="148" column="32" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.490099">
+              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -136,7 +107,6 @@
         <option value="$PROJECT_DIR$/jobs/add-market-values/node_modules/seneca/lib/logging.js" />
         <option value="$PROJECT_DIR$/jobs/add-market-values/.babelrc" />
         <option value="$PROJECT_DIR$/jobs/add-market-values/package.json" />
-        <option value="$PROJECT_DIR$/jobs/add-market-values/add-market-values.js" />
         <option value="$PROJECT_DIR$/database/tests/getDummyData.js" />
         <option value="$PROJECT_DIR$/database/tests/player-dummy-data.json" />
         <option value="$PROJECT_DIR$/database/db-config.js" />
@@ -144,9 +114,12 @@
         <option value="internal/module.js" />
         <option value="$PROJECT_DIR$/database/tests/init-models.js" />
         <option value="$PROJECT_DIR$/database/tests/init-db.js" />
+        <option value="$PROJECT_DIR$/database/tests/test.js" />
         <option value="$PROJECT_DIR$/database/api/db-api.js" />
         <option value="$PROJECT_DIR$/database/lib/db-connection.js" />
-        <option value="$PROJECT_DIR$/database/tests/test.js" />
+        <option value="$PROJECT_DIR$/jobs/add-market-values/add-market-values.js" />
+        <option value="$PROJECT_DIR$/jobs/add-player-points/package.json" />
+        <option value="$PROJECT_DIR$/jobs/add-player-points/add-player-points.js" />
       </list>
     </option>
   </component>
@@ -236,6 +209,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -267,6 +242,10 @@
               <option name="myItemId" value="jobs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="add-player-points" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -296,7 +275,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
+              <option name="myItemId" value="comunio" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -310,80 +289,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
+              <option name="myItemId" value="comunio" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dailytransfermarket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dailytransfermarket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dailytransfermarket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dailytransfermarket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dailytransfermarket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dailytransfermarket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/node-v5.3.1-nightly/bin/node" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jobs/add-market-values/add-market-values.js" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistoryKey" value="mo&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/models.js&#10;util&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/node_modules/util/util.js&#10;comuni&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/comunio/comunio.js&#10;model&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/models.js&#10;model.js&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/models.js&#10;db-api&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/api/db-api.js&#10;comun&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/comunio/api/comunio-api.js&#10;comunio&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/comunio/comunio.js&#10;MODEL&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/models.js&#10;db&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/api/db-api.js&#10;models.&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/models.js&#10;mode.js&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/node_modules/sequelize/lib/model.js&#10;models.js&#9;RUN_CONFIGURATION&#9;models.js&#10;models&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/models.js" />
+    <property name="SearchEverywhereHistoryKey" value="db-&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/api/db-api.js&#10;dbco&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/lib/db-connection.js&#10;model&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/models.js&#10;d&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/api/db-api.js&#10;mo&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/models.js&#10;util&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/node_modules/util/util.js&#10;comuni&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/comunio/comunio.js&#10;model.js&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/models.js&#10;db-api&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/api/db-api.js&#10;comun&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/comunio/api/comunio-api.js&#10;comunio&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/comunio/comunio.js&#10;MODEL&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/models.js&#10;db&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/api/db-api.js&#10;models.&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/models.js&#10;mode.js&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/node_modules/sequelize/lib/model.js&#10;models.js&#9;RUN_CONFIGURATION&#9;models.js&#10;models&#9;FILE&#9;file:///home/lucas/Development/projects/dailytransfermarket/database/models.js" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
@@ -395,13 +318,6 @@
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v4.2.4/bin/node" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/jobs/comunio" />
-      <recent name="$PROJECT_DIR$/transfermarket" />
-      <recent name="$PROJECT_DIR$/comunio" />
-      <recent name="$PROJECT_DIR$/transfermarket/lib" />
-      <recent name="$PROJECT_DIR$/news/ligainsider" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/database/tools" />
       <recent name="$PROJECT_DIR$/jobs/add-market-values" />
@@ -409,69 +325,15 @@
       <recent name="$PROJECT_DIR$/transfermarket" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/jobs/add-player-points" />
+      <recent name="$PROJECT_DIR$/jobs/comunio" />
+      <recent name="$PROJECT_DIR$/transfermarket" />
+      <recent name="$PROJECT_DIR$/comunio" />
+      <recent name="$PROJECT_DIR$/transfermarket/lib" />
+    </key>
   </component>
-  <component name="RunManager" selected="Mocha.database/tests/test.js">
-    <configuration default="false" name="getAllPlayerValues" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
-      <node-options />
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/database/tests/test.js</test-file>
-      <test-names>
-        <name value="getAllPlayerValues" />
-      </test-names>
-      <method />
-    </configuration>
-    <configuration default="false" name="getAllPlayerValues.api" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
-      <node-options />
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/database/tests/test.js</test-file>
-      <test-names>
-        <name value="getAllPlayerValues" />
-        <name value="api" />
-      </test-names>
-      <method />
-    </configuration>
-    <configuration default="false" name="getAllPlayerValues.api.should return an empty array of market values" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
-      <node-options />
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/database/tests/test.js</test-file>
-      <test-names>
-        <name value="getAllPlayerValues" />
-        <name value="api" />
-        <name value="should return an empty array of market values" />
-      </test-names>
-      <method />
-    </configuration>
-    <configuration default="false" name="getAllPlayerValues.api.should return an array of market values with length 8" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
-      <node-options />
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/database/tests/test.js</test-file>
-      <test-names>
-        <name value="getAllPlayerValues" />
-        <name value="api" />
-        <name value="should return an array of market values with length 8" />
-      </test-names>
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Node.js.add-player-points.js">
     <configuration default="false" name="database/tests/test.js" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
@@ -481,6 +343,31 @@
       <extra-mocha-options />
       <test-kind>TEST_FILE</test-kind>
       <test-file>$PROJECT_DIR$/database/tests/test.js</test-file>
+      <method />
+    </configuration>
+    <configuration default="false" name="server.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$USER_HOME$/.nvm/versions/node/v4.2.4/bin/node" path-to-js-file="server.js" working-dir="$PROJECT_DIR$/database/api">
+      <method />
+    </configuration>
+    <configuration default="false" name="init-models.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$USER_HOME$/.nvm/versions/node/v4.2.4/bin/node" path-to-js-file="init-models.js" working-dir="$PROJECT_DIR$/database">
+      <method />
+    </configuration>
+    <configuration default="false" name="addPlayerValues.library.should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/database/tests/test.js</test-file>
+      <test-names>
+        <name value="addPlayerValues" />
+        <name value="library" />
+        <name value="should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" />
+      </test-names>
+      <method />
+    </configuration>
+    <configuration default="false" name="add-player-points.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$USER_HOME$/.nvm/versions/node/v4.2.4/bin/node" path-to-js-file="add-player-points.js" working-dir="$PROJECT_DIR$/jobs/add-player-points">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -559,23 +446,31 @@
     <configuration default="false" name="news-server" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="$USER_HOME$/.nvm/versions/node/v5.6.0/bin/node" path-to-js-file="rss_news/server.js" working-dir="$PROJECT_DIR$/news">
       <method />
     </configuration>
-    <list size="8">
+    <configuration default="false" name="addMarketValues#getPlayerValues" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="$USER_HOME$/.nvm/versions/node/v5.6.0/bin/node" path-to-js-file="add-market-values.js" application-parameters="getPlayerValues 30" working-dir="$PROJECT_DIR$/jobs/add-market-values">
+      <method />
+    </configuration>
+    <configuration default="false" name="addMarketValues#saveMissingPlayerValues" type="NodeJSConfigurationType" factoryName="Node.js" singleton="false" path-to-node="$USER_HOME$/.nvm/versions/node/v5.6.0/bin/node" path-to-js-file="add-market-values.js" application-parameters="saveMissingPlayerValues" working-dir="$PROJECT_DIR$/jobs/add-market-values">
+      <method />
+    </configuration>
+    <list size="10">
       <item index="0" class="java.lang.String" itemvalue="Mocha.TestDatabase" />
       <item index="1" class="java.lang.String" itemvalue="Mocha.TestComunio" />
       <item index="2" class="java.lang.String" itemvalue="Node.js.news-server" />
-      <item index="3" class="java.lang.String" itemvalue="Mocha.getAllPlayerValues" />
-      <item index="4" class="java.lang.String" itemvalue="Mocha.getAllPlayerValues.api" />
-      <item index="5" class="java.lang.String" itemvalue="Mocha.getAllPlayerValues.api.should return an empty array of market values" />
-      <item index="6" class="java.lang.String" itemvalue="Mocha.getAllPlayerValues.api.should return an array of market values with length 8" />
-      <item index="7" class="java.lang.String" itemvalue="Mocha.database/tests/test.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.addMarketValues#getPlayerValues" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.addMarketValues#saveMissingPlayerValues" />
+      <item index="5" class="java.lang.String" itemvalue="Mocha.database/tests/test.js" />
+      <item index="6" class="java.lang.String" itemvalue="Node.js.server.js" />
+      <item index="7" class="java.lang.String" itemvalue="Node.js.init-models.js" />
+      <item index="8" class="java.lang.String" itemvalue="Mocha.addPlayerValues.library.should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" />
+      <item index="9" class="java.lang.String" itemvalue="Node.js.add-player-points.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Mocha.database/tests/test.js" />
-        <item index="1" class="java.lang.String" itemvalue="Mocha.getAllPlayerValues.api.should return an empty array of market values" />
-        <item index="2" class="java.lang.String" itemvalue="Mocha.getAllPlayerValues.api.should return an array of market values with length 8" />
-        <item index="3" class="java.lang.String" itemvalue="Mocha.getAllPlayerValues.api" />
-        <item index="4" class="java.lang.String" itemvalue="Mocha.getAllPlayerValues" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.add-player-points.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.server.js" />
+        <item index="2" class="java.lang.String" itemvalue="Mocha.addPlayerValues.library.should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.init-models.js" />
+        <item index="4" class="java.lang.String" itemvalue="Mocha.database/tests/test.js" />
       </list>
     </recent_temporary>
   </component>
@@ -602,18 +497,24 @@
       <option name="project" value="LOCAL" />
       <updated>1439765468724</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="First draft of adding player values. Scraping of player stats works so far.">
+      <created>1457838805530</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1457838805530</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="database_tests_test_js - 2016.03.05 at 19h 49m 08s.xml">
-      <configuration name="database/tests/test.js" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="addPlayerValues_library_should_add_for_football_player_with_id_1_the_market_values_1_000_000_at_the_21_01_2016_and_1_200_000_at_the_23_01_2016 - 2016.03.13 at 01h 34m 57s.xml">
+      <configuration name="addPlayerValues.library.should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="getAllPlayerValues - 2016.03.05 at 19h 27m 01s.xml">
-      <configuration name="getAllPlayerValues" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="addPlayerValues_library_should_add_for_football_player_with_id_1_the_market_values_1_000_000_at_the_21_01_2016_and_1_200_000_at_the_23_01_2016 - 2016.03.13 at 01h 36m 46s.xml">
+      <configuration name="addPlayerValues.library.should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="getAllPlayerValues - 2016.03.05 at 19h 41m 59s.xml">
-      <configuration name="getAllPlayerValues" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="addPlayerValues_library_should_add_for_football_player_with_id_1_the_market_values_1_000_000_at_the_21_01_2016_and_1_200_000_at_the_23_01_2016 - 2016.03.13 at 01h 37m 54s.xml">
+      <configuration name="addPlayerValues.library.should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" configurationId="mocha-javascript-test-runner" />
     </history-entry>
     <history-entry file="getAllPlayerValues_api - 2016.03.05 at 19h 42m 52s.xml">
       <configuration name="getAllPlayerValues.api" configurationId="mocha-javascript-test-runner" />
@@ -639,27 +540,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16902457" sideWeight="0.48507464" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16902457" sideWeight="0.48507464" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38107097" sideWeight="0.185" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16902457" sideWeight="0.5096953" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4126739" sideWeight="0.72625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35857806" sideWeight="0.49524415" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23493044" sideWeight="0.49524415" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16902457" sideWeight="0.51492536" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29520866" sideWeight="0.815" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9644513" sideWeight="0.72625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.503864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3075734" sideWeight="0.815" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -671,16 +572,16 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16902457" sideWeight="0.5096953" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4126739" sideWeight="0.72625" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36012363" sideWeight="0.49524415" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3106646" sideWeight="0.72625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8995363" sideWeight="0.49524415" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16902457" sideWeight="0.48507464" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.503864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16902457" sideWeight="0.51492536" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32148376" sideWeight="0.815" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3075734" sideWeight="0.815" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -697,16 +598,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Wrote tests for one database seneca service with mocha" />
     <MESSAGE value="Inititialization of models works now. Service for adding news, get comunio players works." />
-    <option name="LAST_COMMIT_MESSAGE" value="Inititialization of models works now. Service for adding news, get comunio players works." />
+    <MESSAGE value="First draft of adding player values. Scraping of player stats works so far." />
+    <option name="LAST_COMMIT_MESSAGE" value="First draft of adding player values. Scraping of player stats works so far." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js</url>
-          <line>15</line>
-          <option name="timeStamp" value="338" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/database/tests/test.js</url>
           <line>165</line>
@@ -722,46 +619,47 @@
           <line>390</line>
           <option name="timeStamp" value="377" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js</url>
+          <line>60</line>
+          <option name="timeStamp" value="411" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js</url>
+          <line>85</line>
+          <option name="timeStamp" value="412" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js</url>
+          <line>107</line>
+          <option name="timeStamp" value="413" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/jobs/add-player-points/add-player-points.js</url>
+          <line>52</line>
+          <option name="timeStamp" value="419" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="378" />
+      <option name="time" value="421" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
-        <watch expression="moment(value.date, &quot;YYYY-MM-DD&quot;).toString()" language="JavaScript" />
-        <watch expression="moment(value.date).toString()" language="JavaScript" />
+        <watch expression="playerStats.map(game =&gt; game.cards)" language="JavaScript" />
+        <watch expression="Number(gameStats.eq(3).text()) == 0" language="JavaScript" />
+        <watch expression="subIn = undefined" language="JavaScript" />
+        <watch expression="Number(gameStats.eq(3).text()) == 0 ? undefined : Number(gameStats.eq(3).text())" language="JavaScript" />
       </configuration>
       <configuration name="mocha-javascript-test-runner">
-        <watch expression="value.valdate" language="JavaScript" />
-        <watch expression="moment(value.valdate, &quot;YYYY-MM-DD&quot;).toDate()" language="JavaScript" />
-        <watch expression="moment('2016-32-01', &quot;YYYY-MM-DD&quot;).toDate()" language="JavaScript" />
+        <watch expression="Object.keys(playerIdsWithDates['1'])" language="JavaScript" />
+        <watch expression="playerIdsWithDates['1']" language="JavaScript" />
+        <watch expression="val.toJSON()" language="JavaScript" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/tests/init-models.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/models.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/api/db-api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/api/db-api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -937,13 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/init-models.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8087521">
-          <caret line="62" column="11" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/node_modules/util/util.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.054380666">
@@ -1028,14 +919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="40" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/tests/init-db.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1050,57 +933,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comunio/test/test.js">
+    <entry file="file://$PROJECT_DIR$/database/node_modules/gate-executor/gate-executor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05142857">
-          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="126" column="19" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/node_modules/seneca/seneca.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33142856">
+          <caret line="1146" column="15" selection-start-line="1146" selection-start-column="15" selection-end-line="1146" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/init-models.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5948136">
+          <caret line="62" column="11" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/models.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/node_modules/gate-executor/gate-executor.js">
+    <entry file="file://$PROJECT_DIR$/jobs/add-market-values/node_modules/comunio/comunio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17224881">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comunio/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="19" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
-          <folding />
+          <caret line="90" column="4" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/lib/db-connection.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5478469">
+          <caret line="141" column="120" selection-start-line="141" selection-start-column="120" selection-end-line="141" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/tests/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79904306">
+          <caret line="97" column="4" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="148" column="32" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/add-player-points/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/add-player-points/add-player-points.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/api/db-api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="30" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/node_modules/seneca/seneca.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1146" column="15" selection-start-line="1146" selection-start-column="15" selection-end-line="1146" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/tests/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44514108">
-          <caret line="615" column="30" selection-start-line="615" selection-start-column="30" selection-end-line="615" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.490099">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="39" />
           <folding />
         </state>
       </provider>
