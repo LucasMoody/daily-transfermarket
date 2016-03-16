@@ -29,27 +29,40 @@ function getPlayerValuesForToday () {
 	dbApi.act('role:database,clubs:get', (err, res) => {
 		if(err)
 			return console.error(err);
+		dbApi.act('role:database,players:get', (err, players) => {
+			if(err)
+				return console.error(err);
 
-		Q.all(
-			res.filter(item => item.comclubid)
-				.map(clubId => comunio.getPlayersByClubId(clubId))
-			)
-			.then(clubsWithPlayers => clubsWithPlayers.reduce((previous, next) => previous.concat(next)))
-			.then(players => {
-				players.forEach(player =>
-					dbApi.act({
-						role: 'database',
-						playerValues: 'add',
-						data: {
-							playerId: player.id,
-							values: {
-								quote: player.quote,
-								date: moment().format('YYYY-MM-DD')
+			//get map for player id and player comunio id
+			const playerMap = players.reduce((previous, next) => {
+				previous[String(next.complayerid)] = next.id;
+				return previous;
+			}, {});
+
+			Q.all(
+				res
+					.map(item => item.comclubid)
+					.map(clubId => comunio.getPlayersByClubId(clubId))
+				)
+				.then(clubsWithPlayers => clubsWithPlayers.reduce((previous, next) => previous.concat(next), []))
+				.then(players => {
+					players.forEach(player => {
+						dbApi.act({
+							role: 'database',
+							playerValues: 'add',
+							data: {
+								playerId: playerMap[String(player.id)],
+								values: [{
+									quote: player.quote,
+									valdate: moment().format('YYYY-MM-DD')
+								}]
 							}
-						}
-					}, (res, error) => err ? console.error(error) : console.log(res))
-				);
-			});
+						}, (res, error) => err ? console.error(error) : "")
+					});
+				})
+				.catch(err => console.error(err));
+		})
+
 	});
 }
 
