@@ -54,6 +54,28 @@ var PlayerNews = sequelize.define('playernews', {
 	newstext: { type: Sequelize.STRING(2048) },
 	newsdate: { type: Sequelize.DATE, allowNull: false },
 	pid: { type: Sequelize.INTEGER, references: { model: Players, key: 'id' } }
+},{
+	collate: 'utf8_general_ci',
+	charset: 'utf8'
+});
+
+var PlayerStats = sequelize.define('playerstats', {
+	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+	pid: { type: Sequelize.INTEGER, references: { model: Players, key: 'id' } },
+	gameday: { type: Sequelize.INTEGER, allowNull: false },
+	seasonstart: { type: Sequelize.INTEGER, allowNull: false },
+	goals: { type: Sequelize.INTEGER, allowNull: false },
+	cards: { type: Sequelize.STRING },
+	subin: { type: Sequelize.INTEGER },
+	subout: { type: Sequelize.INTEGER },
+	points: { type: Sequelize.INTEGER },
+	clubid: { type: Sequelize.INTEGER, references: { model: Clubs, key: 'id' } },
+	home: { type: Sequelize.BOOLEAN, allowNull: false },
+	homescore: { type: Sequelize.INTEGER, allowNull: false },
+	awayscore: { type: Sequelize.INTEGER, allowNull: false }
+},{
+	collate: 'utf8_general_ci',
+	charset: 'utf8'
 });
 
 /*function sync() {
@@ -73,6 +95,7 @@ module.exports = {
 	MarketValues: MarketValues,
 	Injuries: Injuries,
 	PlayerNews: PlayerNews,
+	PlayerStats: PlayerStats,
 	functions: {
 		sync: sync
 	}

@@ -127,3 +127,7 @@ function lookUpPlayerId (msg, respond) {
 		.then(playerId => respond(null, playerId))
 		.catch(err => respond(err));
 }
+
+function addPlayerStats (msg, respond) {
+
+}

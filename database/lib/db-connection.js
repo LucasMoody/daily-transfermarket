@@ -192,6 +192,88 @@ function lookUpPlayerId (comPlayerId) {
     return playerModel.findOne({ where: { complayerid: comPlayerId }, attributes: ['id'] }).then(res => res.toJSON());
 }
 
+/**
+ * This function adds stats for a given player and a given game to the database
+ *
+ * @param {number} playerId - football player's id of the corresponding player statistics
+ * @param {number} gameDay - stat's corresponding game day
+ * @param {number} seasonStart - stat's corresponding season
+ * @param {number} goals - football player's goals in that game
+ * @param {number} clubId - football player's club given by its id
+ * @param {boolean} home - true if it was a home game for the player and false if not
+ * @param {number} homeScore - number of goals the home team scored
+ * @param {number} awayScore - number of goals the away team scored
+ * @param {String} cards - yellow, yellow-red or red
+ * @param {number} subIn - time when the player came in
+ * @param {number} subOut - time when the player was substituted
+ * @param {number} points - football player's comunio points for that game. Undefined when he played but did not get points
+ * @returns {*|Promise} - A promise of the database transaction
+ */
+function addPlayerStats (playerId, gameDay, seasonStart, goals, clubId, home, homeScore, awayScore, cards, subIn, subOut, points) {
+    if (!playerId || isNaN(playerId)) return Promise.reject(new Error('Parameter playerId is not specified or is not a number'));
+    if (!gameDay || isNaN(gameDay)) return Promise.reject(new Error('Parameter gameDay is not specified or is not a number'));
+    if (!seasonStart || isNaN(seasonStart)) return Promise.reject(new Error('Parameter seasonStart is not specified or is not a number'));
+    if (!goals || isNaN(goals)) return Promise.reject(new Error('Parameter goals is not specified or is not a number'));
+    if (!clubId || isNaN(clubid)) return Promise.reject(new Error('Parameter clubId is not specified or is not a number'));
+    if (typeof(home) !== "boolean") return Promise.reject(new Error('Parameter home is not specified or is not a boolean'));
+    if (!homeScore || isNaN(homeScore)) return Promise.reject(new Error('Parameter homeScore is not specified or is not a number'));
+    if (!awayScore || isNaN(awayScore)) return Promise.reject(new Error('Parameter awayScore is not specified or is not a number'));
+    if (cards && (cards === "red" || cards === "yellow" || cards === "yellow-red")) return Promise.reject(new Error('Parameter cards must be either yellow, yellow-red or red'));
+
+    const PlayerStats = models.PlayerStats;
+    return models.PlayerStats.findOrCreate(
+        { where: {
+            pid: playerId,
+            gameday: gameDay,
+            seasonstart: seasonStart,
+            goals: goals,
+            clubid: clubId,
+            home: home,
+            homescore: homeScore,
+            awayscore: awayScore,
+            cards: cards,
+            subin: subIn,
+            subout: subOut,
+            points: points
+        } }
+    );
+}
+
+/**
+ * @typedef PlayerStat
+ * @type Object
+ * @param {number} playerId - football player's id of the corresponding player statistics
+ * @param {number} gameDay - stat's corresponding game day
+ * @param {number} seasonStart - stat's corresponding season
+ * @param {number} goals - football player's goals in that game
+ * @param {number} clubId - football player's club given by its id
+ * @param {boolean} home - true if it was a home game for the player and false if not
+ * @param {number} homeScore - number of goals the home team scored
+ * @param {number} awayScore - number of goals the away team scored
+ * @param {String} cards - yellow, yellow-red or red
+ * @param {number} subIn - time when the player came in
+ * @param {number} subOut - time when the player was substituted
+ * @param {number} points - football player's comunio points for that game. Undefined when he played but did not get points
+ */
+
+/**
+ *
+ * @param playerId - football player's id of which the stats are asked
+ * @param [gameDay] - stat's game
+ * @param [seasonStart] - season of the game
+ * @returns {*|Promise.<PlayerStat>} A promise of all game stats of the given football player
+ */
+function getPlayerStats (playerId, gameDay, seasonStart) {
+    if (!playerId || isNaN(playerId)) return Promise.reject(new Error('Parameter playerId is not specified or is not a number'));
+    const PlayerStats = models.PlayerStats;
+    if(!gameDay && isNaN(gameDay) && !seasonStart && isNaN(seasonStart))
+        return PlayerStats.findAll({ where : { id: playerId}});
+    else if(gameDay && !isNaN(gameDay) && seasonStart && !isNaN(seasonStart))
+        return PlayerStats.findAll({ where : { id: playerId, gameday: gameDay, seasonstart: seasonStart }});
+    else
+        return Promise.reject(new Error('One of the parameter gameDay or seasonStart is not specified or is not a number'));
+}
+
 module.exports = {
     addNews,
     getNews,
@@ -200,5 +282,7 @@ module.exports = {
     getPlayerValues,
     getAllPlayerValues,
     addPlayerValues,
-    lookUpPlayerId
+    lookUpPlayerId,
+    addPlayerStats,
+    getPlayerStats
 }
