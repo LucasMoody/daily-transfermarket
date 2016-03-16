@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae03766a-66be-4b8a-b42e-37aee319ce02" name="Default" comment="Inititialization of models works now. Service for adding news, get comunio players works.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="ae03766a-66be-4b8a-b42e-37aee319ce02" name="Default" comment="" />
     <ignored path="dailytransfermarket.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="add-market-values.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="add-market-values.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.44731182">
+              <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/models.js">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="33" />
+              <caret line="20" column="15" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -53,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db-api.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db-api.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/api/db-api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.490099">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="105" column="54" selection-start-line="105" selection-start-column="19" selection-end-line="105" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -115,11 +123,11 @@
         <option value="$PROJECT_DIR$/database/tests/init-models.js" />
         <option value="$PROJECT_DIR$/database/tests/init-db.js" />
         <option value="$PROJECT_DIR$/database/tests/test.js" />
-        <option value="$PROJECT_DIR$/database/api/db-api.js" />
         <option value="$PROJECT_DIR$/database/lib/db-connection.js" />
-        <option value="$PROJECT_DIR$/jobs/add-market-values/add-market-values.js" />
         <option value="$PROJECT_DIR$/jobs/add-player-points/package.json" />
         <option value="$PROJECT_DIR$/jobs/add-player-points/add-player-points.js" />
+        <option value="$PROJECT_DIR$/database/api/db-api.js" />
+        <option value="$PROJECT_DIR$/jobs/add-market-values/add-market-values.js" />
       </list>
     </option>
   </component>
@@ -275,6 +283,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dailytransfermarket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dailytransfermarket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="comunio" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -333,7 +355,7 @@
       <recent name="$PROJECT_DIR$/transfermarket/lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.add-player-points.js">
+  <component name="RunManager" selected="Node.js.addMarketValues#getPlayerValues ForToday">
     <configuration default="false" name="database/tests/test.js" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
@@ -343,12 +365,6 @@
       <extra-mocha-options />
       <test-kind>TEST_FILE</test-kind>
       <test-file>$PROJECT_DIR$/database/tests/test.js</test-file>
-      <method />
-    </configuration>
-    <configuration default="false" name="server.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$USER_HOME$/.nvm/versions/node/v4.2.4/bin/node" path-to-js-file="server.js" working-dir="$PROJECT_DIR$/database/api">
-      <method />
-    </configuration>
-    <configuration default="false" name="init-models.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$USER_HOME$/.nvm/versions/node/v4.2.4/bin/node" path-to-js-file="init-models.js" working-dir="$PROJECT_DIR$/database">
       <method />
     </configuration>
     <configuration default="false" name="addPlayerValues.library.should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
@@ -365,6 +381,12 @@
         <name value="library" />
         <name value="should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" />
       </test-names>
+      <method />
+    </configuration>
+    <configuration default="false" name="server.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$USER_HOME$/.nvm/versions/node/v4.2.4/bin/node" path-to-js-file="server.js" working-dir="$PROJECT_DIR$/database/api">
+      <method />
+    </configuration>
+    <configuration default="false" name="init-models.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$USER_HOME$/.nvm/versions/node/v4.2.4/bin/node" path-to-js-file="init-models.js" working-dir="$PROJECT_DIR$/database">
       <method />
     </configuration>
     <configuration default="false" name="add-player-points.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$USER_HOME$/.nvm/versions/node/v4.2.4/bin/node" path-to-js-file="add-player-points.js" working-dir="$PROJECT_DIR$/jobs/add-player-points">
@@ -449,27 +471,31 @@
     <configuration default="false" name="addMarketValues#getPlayerValues" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="$USER_HOME$/.nvm/versions/node/v5.6.0/bin/node" path-to-js-file="add-market-values.js" application-parameters="getPlayerValues 30" working-dir="$PROJECT_DIR$/jobs/add-market-values">
       <method />
     </configuration>
+    <configuration default="false" name="addMarketValues#getPlayerValues ForToday" type="NodeJSConfigurationType" factoryName="Node.js" singleton="false" path-to-node="$USER_HOME$/.nvm/versions/node/v5.6.0/bin/node" path-to-js-file="add-market-values.js" application-parameters="getPlayerValuesForToday" working-dir="$PROJECT_DIR$/jobs/add-market-values">
+      <method />
+    </configuration>
     <configuration default="false" name="addMarketValues#saveMissingPlayerValues" type="NodeJSConfigurationType" factoryName="Node.js" singleton="false" path-to-node="$USER_HOME$/.nvm/versions/node/v5.6.0/bin/node" path-to-js-file="add-market-values.js" application-parameters="saveMissingPlayerValues" working-dir="$PROJECT_DIR$/jobs/add-market-values">
       <method />
     </configuration>
-    <list size="10">
+    <list size="11">
       <item index="0" class="java.lang.String" itemvalue="Mocha.TestDatabase" />
       <item index="1" class="java.lang.String" itemvalue="Mocha.TestComunio" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.news-server" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.addMarketValues#getPlayerValues" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.addMarketValues#saveMissingPlayerValues" />
-      <item index="5" class="java.lang.String" itemvalue="Mocha.database/tests/test.js" />
-      <item index="6" class="java.lang.String" itemvalue="Node.js.server.js" />
-      <item index="7" class="java.lang.String" itemvalue="Node.js.init-models.js" />
-      <item index="8" class="java.lang.String" itemvalue="Mocha.addPlayerValues.library.should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" />
-      <item index="9" class="java.lang.String" itemvalue="Node.js.add-player-points.js" />
+      <item index="2" class="java.lang.String" itemvalue="Mocha.database/tests/test.js" />
+      <item index="3" class="java.lang.String" itemvalue="Mocha.addPlayerValues.library.should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.news-server" />
+      <item index="5" class="java.lang.String" itemvalue="Node.js.addMarketValues#getPlayerValues" />
+      <item index="6" class="java.lang.String" itemvalue="Node.js.addMarketValues#getPlayerValues ForToday" />
+      <item index="7" class="java.lang.String" itemvalue="Node.js.addMarketValues#saveMissingPlayerValues" />
+      <item index="8" class="java.lang.String" itemvalue="Node.js.server.js" />
+      <item index="9" class="java.lang.String" itemvalue="Node.js.init-models.js" />
+      <item index="10" class="java.lang.String" itemvalue="Node.js.add-player-points.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.add-player-points.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.init-models.js" />
         <item index="1" class="java.lang.String" itemvalue="Node.js.server.js" />
-        <item index="2" class="java.lang.String" itemvalue="Mocha.addPlayerValues.library.should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.init-models.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.add-player-points.js" />
+        <item index="3" class="java.lang.String" itemvalue="Mocha.addPlayerValues.library.should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016" />
         <item index="4" class="java.lang.String" itemvalue="Mocha.database/tests/test.js" />
       </list>
     </recent_temporary>
@@ -503,7 +529,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457838805530</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added some error handling in db.api and fixed some bugs in add-market-values job.">
+      <created>1458139530747</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1458139530747</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -542,25 +574,25 @@
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16902457" sideWeight="0.48507464" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16902457" sideWeight="0.48507464" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38107097" sideWeight="0.185" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16902457" sideWeight="0.5096953" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32148376" sideWeight="0.72625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23493044" sideWeight="0.49524415" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23493044" sideWeight="0.49524415" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16902457" sideWeight="0.51492536" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3075734" sideWeight="0.815" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9644513" sideWeight="0.72625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.503864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3075734" sideWeight="0.815" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -572,16 +604,16 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16902457" sideWeight="0.5096953" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3106646" sideWeight="0.72625" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8995363" sideWeight="0.49524415" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9644513" sideWeight="0.72625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23493044" sideWeight="0.49524415" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16902457" sideWeight="0.48507464" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.503864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16902457" sideWeight="0.51492536" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3075734" sideWeight="0.815" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3075734" sideWeight="0.815" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -599,7 +631,8 @@
     <MESSAGE value="Wrote tests for one database seneca service with mocha" />
     <MESSAGE value="Inititialization of models works now. Service for adding news, get comunio players works." />
     <MESSAGE value="First draft of adding player values. Scraping of player stats works so far." />
-    <option name="LAST_COMMIT_MESSAGE" value="First draft of adding player values. Scraping of player stats works so far." />
+    <MESSAGE value="Added some error handling in db.api and fixed some bugs in add-market-values job." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some error handling in db.api and fixed some bugs in add-market-values job." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -621,17 +654,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js</url>
-          <line>60</line>
+          <line>73</line>
           <option name="timeStamp" value="411" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js</url>
-          <line>85</line>
+          <line>98</line>
           <option name="timeStamp" value="412" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js</url>
-          <line>107</line>
+          <line>120</line>
           <option name="timeStamp" value="413" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -639,18 +672,25 @@
           <line>52</line>
           <option name="timeStamp" value="419" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/database/api/db-api.js</url>
+          <line>93</line>
+          <option name="timeStamp" value="430" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/database/api/db-api.js</url>
+          <line>105</line>
+          <option name="timeStamp" value="431" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="421" />
+      <option name="time" value="434" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
-        <watch expression="playerStats.map(game =&gt; game.cards)" language="JavaScript" />
-        <watch expression="Number(gameStats.eq(3).text()) == 0" language="JavaScript" />
-        <watch expression="subIn = undefined" language="JavaScript" />
-        <watch expression="Number(gameStats.eq(3).text()) == 0 ? undefined : Number(gameStats.eq(3).text())" language="JavaScript" />
+        <watch expression="playerMap[String(player.id)]" language="JavaScript" />
       </configuration>
       <configuration name="mocha-javascript-test-runner">
         <watch expression="Object.keys(playerIdsWithDates['1'])" language="JavaScript" />
@@ -954,13 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/models.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="15" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jobs/add-market-values/node_modules/comunio/comunio.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17224881">
@@ -979,6 +1012,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5478469">
           <caret line="141" column="120" selection-start-line="141" selection-start-column="120" selection-end-line="141" selection-end-column="120" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -986,14 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.79904306">
           <caret line="97" column="4" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1016,8 +1042,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/api/db-api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.490099">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="105" column="54" selection-start-line="105" selection-start-column="19" selection-end-line="105" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/models.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/add-market-values/add-market-values.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44731182">
+          <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
           <folding />
         </state>
       </provider>
