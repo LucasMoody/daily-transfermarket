@@ -128,6 +128,21 @@ function getCommunityByUser(userName) {
 		});
 };
 
+function getGameDays() {
+	const args = {};
+	return Q.nfcall(soap.createClient, url)
+		.then(client => {
+			return Q.nfcall(client.getgamedays, null);
+		})
+		.then(gamedays => {
+			console.log(gamedays);
+			return gamedays[0].return.$value;
+		})
+		.catch(err => console.error(err));
+}
+
+getGameDays();
+
 module.exports = {
 	getCommunityByUser: getCommunityByUser,
 	getCommunityName: getCommunityName,

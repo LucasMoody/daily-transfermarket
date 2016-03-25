@@ -66,6 +66,7 @@ var PlayerStats = sequelize.define('playerstats', {
 	seasonstart: { type: Sequelize.INTEGER, allowNull: false },
 	goals: { type: Sequelize.INTEGER, allowNull: false },
 	cards: { type: Sequelize.STRING },
+	opponentId: { type: Sequelize.INTEGER, references: { model: Clubs, key: 'id' } },
 	subin: { type: Sequelize.INTEGER },
 	subout: { type: Sequelize.INTEGER },
 	points: { type: Sequelize.INTEGER },
@@ -76,6 +77,16 @@ var PlayerStats = sequelize.define('playerstats', {
 },{
 	collate: 'utf8_general_ci',
 	charset: 'utf8'
+});
+
+var GameSchedule = sequelize.define('gameschedule', {
+	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+	gameday: { type: Sequelize.INTEGER, allowNull: false },
+	seasonstart: { type: Sequelize.INTEGER, allowNull: false },
+	homescore: { type: Sequelize.INTEGER },
+	guestscore: { type: Sequelize.INTEGER },
+	homeclubid: { type: Sequelize.INTEGER, references: { model: Clubs, key: 'id' } },
+	guestclubid: { type: Sequelize.INTEGER, references: { model: Clubs, key: 'id' } }
 });
 
 /*function sync() {
@@ -96,6 +107,7 @@ module.exports = {
 	Injuries: Injuries,
 	PlayerNews: PlayerNews,
 	PlayerStats: PlayerStats,
+	GameSchedule: GameSchedule,
 	functions: {
 		sync: sync
 	}

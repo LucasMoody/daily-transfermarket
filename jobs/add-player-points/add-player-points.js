@@ -6,28 +6,58 @@ const dbApi = seneca.client(10102);
 const statsUrl = 'http://stats.comunio.de/profil.php?id=';
 const cheerio = require('cheerio');
 const rp = require('request-promise');
+const seasonStart = require('config.json').seasonStart;
 
 //1. get all comunio player ids and also save db id
 dbApi.act('role:database,players:get', (err, res) => {
-    if(err) return console.error(err);
+    if(err) throw err;
 
-    //reduce each player information to only complayerid and id
-    Q.all(res
-        .map(player => ({id: player.id, complayerid: player.complayerid}))
-        //2. get html via request
-        .map(player => {
-            return rp(statsUrl + player.complayerid)
-                .then(html => {
-                    return getPlayerStatsFromHtml(html).map(gameStat => Object.assign({}, gameStat, {id: player.id}));
-                });
-        }))
-    .then(gameStats => {
-        gameStats
-            .reduce((previous, next) => previous.concat(next))
-            .forEach(gameStat => {
-                //4. save it in db
-            })
-    }).catch(err => console.error(err));
+    dbApi.act('role:database,clubs:get', (err, res) => {
+        if(err) throw err;
+
+        const clubMap = res
+            .map(club => {id: club.id, comclubid: club.comclubid})
+            .reduce((previous, next) => {
+                previous[String(next.comclubid)] = next.id;
+            }, {});
+
+        //reduce each player information to only complayerid and id
+        Q.all(res
+            .map(player => ({id: player.id, complayerid: player.complayerid}))
+            //2. get html via request
+            .map(player => {
+                return rp(statsUrl + player.complayerid)
+                    .then(html => {
+                        return getPlayerStatsFromHtml(html).map(gameStat => Object.assign({}, gameStat, {playerIdd: player.id}));
+                    });
+            }))
+            .then(gameStats => {
+                gameStats
+                    .reduce((previous, next) => previous.concat(next))
+                    .forEach(gameStat => {
+                        //4. save it in db
+                        //{gameDay, goals, cards, subIn, subOut, points, opponent, home, homeScore, awayScore}
+                        dbApi.act({
+                            role: 'database',
+                            playerStats: 'add',
+                            data: {
+                                playerId: gameStat.playerId,
+                                gameDay: gameStat.gameDay,
+                                seasonStart: seasonStart,
+                                goals: gameStat.goals,
+                                clubId gameStat.,
+                                home: gameStat.home,
+                                homeScore: gameStat.homeScore,
+                                awayScore: gameStat.awayScore,
+                                cards: gameStat.cards,
+                                subIn: gameStat.subIn,
+                                subOut: gameStat.subOut,
+                                points: gameStat.points
+                            }
+                        })
+                    })
+            }).catch(err => console.error(err));
+    });
 });
 
 //3. get points, goals, cards, substitution-in, substitution-out, opponent, home, score-home, score-away for each game day
