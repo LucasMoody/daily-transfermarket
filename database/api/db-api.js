@@ -118,7 +118,8 @@ function addPlayerValues (msg, respond) {
 
 	dbConnection.addPlayerValues(playerId, values)
 		.then(status => respond(null, status))
-		.catch(err => respond(err));
+		.catch(err =>
+			respond(err));
 }
 
 function lookUpPlayerId (msg, respond) {
@@ -163,11 +164,8 @@ function addPlayerStats (msg, respond) {
 	if (gameDay ==null || typeof gameDay !== "number") return respond(new Error('Parameter gameDay is not specified or is not a number'));
 	if (seasonStart == null || typeof seasonStart !== "number") return respond(new Error('Parameter seasonStart is not specified or is not a number'));
 	if (goals == null || typeof goals !== "number") return respond(new Error('Parameter goals is not specified or is not a number'));
-	if (!clubId || typeof clubId !== "number") return respond(new Error('Parameter clubId is not specified or is not a number'));
 	if (!opponentId || typeof opponentId !== "number") return respond(new Error('Parameter opponentId is not specified or is not a number'));
 	if (typeof(home) !== "boolean") return respond(new Error('Parameter home is not specified or is not a boolean'));
-	if (homeScore == null || typeof homeScore !== "number") return respond(new Error('Parameter homeScore is not specified or is not a number'));
-	if (awayScore == null || typeof awayScore !== "number") return respond(new Error('Parameter awayScore is not specified or is not a number'));
 	if (cards && !(cards === "red" || cards === "yellow" || cards === "yellow-red")) return respond(new Error('Parameter cards must be either yellow, yellow-red or red'));
 	if (subIn != null && typeof subIn !== "number") return respond(new Error('Parameter subIn is not a number'));
 	if (subOut != null && typeof subOut !== "number") return respond(new Error('Parameter subOut is not a number'));
@@ -178,11 +176,8 @@ function addPlayerStats (msg, respond) {
 		gameDay,
 		seasonStart,
 		goals,
-		clubId,
 		opponentId,
 		home,
-		homeScore,
-		awayScore,
 		cards,
 		subIn,
 		subOut,

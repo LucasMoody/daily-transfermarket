@@ -37,7 +37,8 @@ function initModels() {
     const models = require('../models.js');
     return models.functions.sync()
         .then(() => initClubs(models.Clubs))
-        .then(() => initPlayers(models.Players));
+        .then(() => initPlayers(models.Players))
+        .then(() => initMatches(models.GameSchedule));
 }
 
 function initClubs(Clubs) {
@@ -76,6 +77,24 @@ function initPlayers(Players) {
              clubid: player.clubid
          } })
        );
+    });
+    return Promise.all(promises);
+}
+
+function initMatches(GameSchedule) {
+    const promises = [];
+    const dummyJsonData = require('./match-dummy-data.json');
+    dummyJsonData.forEach(match => {
+        promises.push(
+            GameSchedule.findOrCreate({ where: {
+                gameday: match.gameDay,
+                seasonstart: match.seasonStart,
+                homescore: match.homeScore,
+                guestscore: match.guestScore,
+                homeclubid: match.homeTeam,
+                guestclubid: match.guestTeam
+            } })
+        );
     });
     return Promise.all(promises);
 }

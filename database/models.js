@@ -59,26 +59,6 @@ var PlayerNews = sequelize.define('playernews', {
 	charset: 'utf8'
 });
 
-var PlayerStats = sequelize.define('playerstats', {
-	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-	pid: { type: Sequelize.INTEGER, references: { model: Players, key: 'id' } },
-	gameday: { type: Sequelize.INTEGER, allowNull: false },
-	seasonstart: { type: Sequelize.INTEGER, allowNull: false },
-	goals: { type: Sequelize.INTEGER, allowNull: false },
-	cards: { type: Sequelize.STRING },
-	opponentId: { type: Sequelize.INTEGER, references: { model: Clubs, key: 'id' } },
-	subin: { type: Sequelize.INTEGER },
-	subout: { type: Sequelize.INTEGER },
-	points: { type: Sequelize.INTEGER },
-	clubid: { type: Sequelize.INTEGER, references: { model: Clubs, key: 'id' } },
-	home: { type: Sequelize.BOOLEAN, allowNull: false },
-	homescore: { type: Sequelize.INTEGER, allowNull: false },
-	awayscore: { type: Sequelize.INTEGER, allowNull: false }
-},{
-	collate: 'utf8_general_ci',
-	charset: 'utf8'
-});
-
 var GameSchedule = sequelize.define('gameschedule', {
 	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
 	gameday: { type: Sequelize.INTEGER, allowNull: false },
@@ -88,6 +68,23 @@ var GameSchedule = sequelize.define('gameschedule', {
 	homeclubid: { type: Sequelize.INTEGER, references: { model: Clubs, key: 'id' } },
 	guestclubid: { type: Sequelize.INTEGER, references: { model: Clubs, key: 'id' } }
 });
+
+var PlayerStats = sequelize.define('playerstats', {
+	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+	pid: { type: Sequelize.INTEGER, references: { model: Players, key: 'id' } },
+	gamedayid: { type: Sequelize.INTEGER, references: { model: GameSchedule, key: 'id' } },
+	goals: { type: Sequelize.INTEGER, allowNull: false },
+	cards: { type: Sequelize.STRING },
+	home: { type: Sequelize.BOOLEAN, allowNull: false},
+	subin: { type: Sequelize.INTEGER },
+	subout: { type: Sequelize.INTEGER },
+	points: { type: Sequelize.INTEGER }
+},{
+	collate: 'utf8_general_ci',
+	charset: 'utf8'
+});
+
+PlayerStats.belongsTo(GameSchedule, { foreignKey: 'gamedayid'});
 
 /*function sync() {
 	return sequelize.drop().then(function() {

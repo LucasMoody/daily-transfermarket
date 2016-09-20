@@ -127,7 +127,8 @@ describe('addPlayerValues', function() {
 
 
 	describe('api', () => {
-		it('should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016', done => {
+		it('should add for football player with id 1 the market values 1.000.000 at the 21.01.2016 and 1.200.000 at the 23.01.2016', function(done) {
+			seneca.error(done);
 			seneca.act({
 				role: "database",
 				playerValues: "add",
@@ -154,7 +155,8 @@ describe('addPlayerValues', function() {
 			});
 		});
 
-		it('should throw an error for market value with the date 2016-32-01 which does not exist', done => {
+		it('should throw an error for market value with the date 2016-32-01 which does not exist', function(done) {
+			//seneca.error(done);
 			seneca.act({
 				role: "database",
 				playerValues: "add",
@@ -163,12 +165,13 @@ describe('addPlayerValues', function() {
 					values: [{quote: 1000000, valdate: '2016-32-01'}]
 				}
 			}, (err, res) => {
+				seneca.error(done);
 				err.should.be.an.instanceOf(Error);
 				done();
 			});
 		});
 
-		it('should throw an error when quote is a string', done => {
+		it('should throw an error when quote is a string', function(done) {
 			seneca.act({
 				role: "database",
 				playerValues: "add",
@@ -177,12 +180,13 @@ describe('addPlayerValues', function() {
 					values: [{quote: "quote", valdate: '2016-01-01'}]
 				}
 			}, (err, res) => {
+				seneca.error(done);
 				err.should.be.an.instanceOf(Error);
 				done();
 			});
 		});
 
-		it('should throw an error when quote is undefined', done => {
+		it('should throw an error when quote is undefined', function(done) {
 			seneca.act({
 				role: "database",
 				playerValues: "add",
@@ -191,12 +195,13 @@ describe('addPlayerValues', function() {
 					values: [{quote: undefined, valdate: '2016-01-01'}]
 				}
 			}, (err, res) => {
+				seneca.error(done);
 				err.should.be.an.instanceOf(Error);
 				done();
 			});
 		});
 
-		it('should throw an error when id is undefined', done => {
+		it('should throw an error when id is undefined', function(done) {
 			seneca.act({
 				role: "database",
 				playerValues: "add",
@@ -205,12 +210,13 @@ describe('addPlayerValues', function() {
 					values: [{quote: 1000000, valdate: '2016-01-01'}]
 				}
 			}, (err, res) => {
+				seneca.error(done);
 				err.should.be.an.instanceOf(Error);
 				done();
 			});
 		});
 
-		it('should throw an error when id is not a number', done => {
+		it('should throw an error when id is not a number', function(done) {
 			seneca.act({
 				role: "database",
 				playerValues: "add",
@@ -219,6 +225,7 @@ describe('addPlayerValues', function() {
 					values: [{quote: 1000000, valdate: '2016-01-01'}]
 				}
 			}, (err, res) => {
+				seneca.error(done);
 				err.should.be.an.instanceOf(Error);
 				done();
 			});
@@ -624,244 +631,151 @@ describe('getAllPlayerValues', () => {
 });
 
 describe('addPlayerStats', () => {
-	describe('library', () => {
-		const oneStat = {
-			playerId: 2,
-			gameDay: 2,
-			seasonStart: 2015,
-			goals: 0,
-			clubId: 1,
-			opponentId: 8,
-			home: true,
-			homeScore: 2,
-			awayScore: 1,
-			subOut: 89,
-			points: 8
-		};
+    const playerStatsOne = {
+        playerId: 2,
+        gameDay: 2,
+        seasonStart: 2015,
+        goals: 0,
+        opponentId: 1,
+        home: true,
+        subOut: 89,
+        points: 8
+    };
+    const playerStatsOneResult = Object.assign({}, playerStatsOne, {
+        cards: null,
+        subIn: null,
+        gameDay: undefined,
+        seasonStart: undefined,
+        opponentId: undefined,
+        gameschedule: {
+            gameDay: 2,
+            guestClubId: 1,
+            seasonStart: 2015,
+            homeClubId: 8,
+            homeScore: 1,
+            guestScore: 2
+        }
+    });
+    delete playerStatsOneResult.gameDay;
+    delete playerStatsOneResult.seasonStart;
+    delete playerStatsOneResult.opponentId;
 
+    describe('library', () => {
 		it('should add stats without player being subbed in and not getting a card for football player with id 2', () => {
-			return dbConnection.addPlayerStats({
-				playerId: 2,
-				gameDay: 2,
-				seasonStart: 2015,
-				goals: 0,
-				clubId: 1,
-				opponentId: 8,
-				home: true,
-				homeScore: 2,
-				awayScore: 1,
-				subOut: 89,
-				points: 8 })
+			return dbConnection.addPlayerStats(playerStatsOne)
 				.then(() => {
 					return dbConnection.getPlayerStats(2);
-				}).should.eventually.eql([{
-					playerId: 2,
-					gameDay: 2,
-					seasonStart: 2015,
-					goals: 0,
-					clubId: 1,
-					opponentId: 8,
-					home: true,
-					homeScore: 2,
-					awayScore: 1,
-					cards: null,
-					subIn: null,
-					subOut: 89,
-					points: 8
-				}]);
+				}).should.eventually.eql([
+                    playerStatsOneResult
+				]);
 		});
 
 		it('should add stats without player being subbed out and getting a red card for football player with id 5', () => {
-			return dbConnection.addPlayerStats({
-					playerId: 5,
-					gameDay: 34,
-					seasonStart: 2014,
-					goals: 2,
-					clubId: 3,
-					opponentId: 8,
-					home: false,
-					homeScore: 0,
-					awayScore: 3,
-					subIn: 15,
-					points: 8,
-					cards: 'red'
-			})
+			return dbConnection.addPlayerStats(
+			    Object.assign({}, playerStatsOne, {
+			        playerId: 5,
+                    cards: 'red',
+                    subOut: undefined
+                })
+            )
 				.then(() => {
 					return dbConnection.getPlayerStats(5);
-				}).should.eventually.eql([{
-					playerId: 5,
-					gameDay: 34,
-					seasonStart: 2014,
-					goals: 2,
-					clubId: 3,
-					opponentId: 8,
-					home: false,
-					homeScore: 0,
-					awayScore: 3,
-					cards: 'red',
-					subIn: 15,
-					subOut: null,
-					points: 8
-				}]);
-		});
-
-		it('should add stats for game which ended 0:0', () => {
-			return dbConnection.addPlayerStats({
-					playerId: 5,
-					gameDay: 34,
-					seasonStart: 2014,
-					goals: 2,
-					clubId: 3,
-					opponentId: 8,
-					home: false,
-					homeScore: 0,
-					awayScore: 0,
-					subIn: 15,
-					points: 8,
-					cards: 'red'
-				})
-				.then(() => {
-					return dbConnection.getPlayerStats(5);
-				}).should.eventually.eql([{
-					playerId: 5,
-					gameDay: 34,
-					seasonStart: 2014,
-					goals: 2,
-					clubId: 3,
-					opponentId: 8,
-					home: false,
-					homeScore: 0,
-					awayScore: 0,
-					cards: 'red',
-					subIn: 15,
-					subOut: null,
-					points: 8
-				}]);
+				}).should.eventually.eql([
+                    Object.assign({}, playerStatsOneResult, {
+                        playerId: 5,
+                        cards: 'red',
+                        subOut: null
+                    })
+                ]);
 		});
 
 		describe('parameter testing', () => {
 			it('should throw an error because playerId is undefined', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					playerId: undefined
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter playerId is not specified or is not a number');
 			});
 
 			it('should throw an error because playerId is not a number', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					playerId: "1"
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter playerId is not specified or is not a number');
 			});
 
 			it('should throw an error because gameDay is undefined', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					gameDay: undefined
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter gameDay is not specified or is not a number');
 			});
 
 			it('should throw an error because gameDay is not a number', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					gameDay: "1"
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter gameDay is not specified or is not a number');
 			});
 
 			it('should throw an error because seasonStart is undefined', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					seasonStart: undefined
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter seasonStart is not specified or is not a number');
 			});
 
 			it('should throw an error because seasonStart is not a number', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					seasonStart: "1"
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter seasonStart is not specified or is not a number');
 			});
 
 			it('should throw an error because goals is undefined', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					goals: undefined
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter goals is not specified or is not a number');
 			});
 
 			it('should throw an error because goals is not a number', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					goals: "1"
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter goals is not specified or is not a number');
 			});
 
-			it('should throw an error because clubId is undefined', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-					clubId: undefined
-				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter clubId is not specified or is not a number');
-			});
-
-			it('should throw an error because clubId is not a number', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-					clubId: "1"
-				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter clubId is not specified or is not a number');
-			});
-
 			it('should throw an error because opponentId is undefined', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					opponentId: undefined
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter opponentId is not specified or is not a number');
 			});
 
 			it('should throw an error because opponentId is not a number', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					opponentId: "1"
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter opponentId is not specified or is not a number');
 			});
 
 			it('should throw an error because home is undefined', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					home: undefined
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter home is not specified or is not a boolean');
 			});
 
 			it('should throw an error because home is not a number', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					home: "1"
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter home is not specified or is not a boolean');
 			});
 
-			it('should throw an error because homeScore is undefined', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-					homeScore: undefined
-				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter homeScore is not specified or is not a number');
-			});
-
-			it('should throw an error because homeScore is not a number', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-					homeScore: "1"
-				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter homeScore is not specified or is not a number');
-			});
-
-			it('should throw an error because awayScore is undefined', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-					awayScore: undefined
-				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter awayScore is not specified or is not a number');
-			});
-
-			it('should throw an error because awayScore is not a number', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-					awayScore: "1"
-				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter awayScore is not specified or is not a number');
-			});
-
 			it('should throw an error because subIn is not a number', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					subIn: "1"
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter subIn is not a number');
 			});
 
 			it('should throw an error because subOut is not a number', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					subOut: "1"
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter subOut is not a number');
 			});
 
 			it('should throw an error because points is not a number', () => {
-				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					points: "1"
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter points is not a number');
 			});
@@ -986,19 +900,7 @@ describe('addPlayerStats', () => {
 			seneca.act({
 				role: 'database',
 				playerStats: 'add',
-				data: {
-					playerId: 2,
-					gameDay: 2,
-					seasonStart: 2015,
-					goals: 0,
-					clubId: 1,
-					opponentId: 8,
-					home: true,
-					homeScore: 2,
-					awayScore: 1,
-					subOut: 89,
-					points: 8
-				}
+				data: playerStatsOne
 			}, (err, res) => {
 				if(err) return done(err);
 				seneca.act({
@@ -1009,21 +911,7 @@ describe('addPlayerStats', () => {
 					}
 				}, (err, res) => {
 					if(err) return done(err);
-					res.should.deep.eql([{
-						playerId: 2,
-						gameDay: 2,
-						seasonStart: 2015,
-						goals: 0,
-						clubId: 1,
-						opponentId: 8,
-						home: true,
-						homeScore: 2,
-						awayScore: 1,
-						cards: null,
-						subIn: null,
-						subOut: 89,
-						points: 8
-					}]);
+					res.should.deep.eql([playerStatsOneResult]);
 					return done();
 				});
 			});
@@ -1035,20 +923,11 @@ describe('addPlayerStats', () => {
 			seneca.act({
 				role: 'database',
 				playerStats: 'add',
-				data: {
-					playerId: 5,
-					gameDay: 34,
-					seasonStart: 2014,
-					goals: 2,
-					clubId: 3,
-					opponentId: 8,
-					home: false,
-					homeScore: 0,
-					awayScore: 3,
-					subIn: 15,
-					points: 8,
-					cards: 'red'
-				}
+				data: Object.assign({}, playerStatsOne, {
+                    playerId: 5,
+                    cards: 'red',
+                    subOut: undefined
+                })
 			}, (err, res) => {
 				if(err) return done(err);
 				seneca.act({
@@ -1059,75 +938,16 @@ describe('addPlayerStats', () => {
 					}
 				}, (err, res) => {
 					if(err) done(err);
-					res.should.eql([{
-						playerId: 5,
-						gameDay: 34,
-						seasonStart: 2014,
-						goals: 2,
-						clubId: 3,
-						opponentId: 8,
-						home: false,
-						homeScore: 0,
-						awayScore: 3,
-						cards: 'red',
-						subIn: 15,
-						subOut: null,
-						points: 8
-					}]);
+					res.should.eql([Object.assign({}, playerStatsOneResult, {
+                        playerId: 5,
+                        cards: 'red',
+                        subOut: null
+                    })]);
 					return done();
 				});
 			});
 		});
 
-		it('should add stats for game which ended 0:0', function(done) {
-			this.timeout(10000);
-			seneca.error(done);
-			seneca.act({
-				role: 'database',
-				playerStats: 'add',
-				data: {
-					playerId: 5,
-					gameDay: 34,
-					seasonStart: 2014,
-					goals: 2,
-					clubId: 3,
-					opponentId: 8,
-					home: false,
-					homeScore: 0,
-					awayScore: 0,
-					subIn: 15,
-					points: 8,
-					cards: 'red'
-				}
-			}, (err, res) => {
-				if(err) return done(err);
-				seneca.act({
-					role: 'database',
-					playerStats: 'get',
-					data: {
-						playerId: 5
-					}
-				}, (err, res) => {
-					if(err) return done(err);
-					res.should.eql([{
-						playerId: 5,
-						gameDay: 34,
-						seasonStart: 2014,
-						goals: 2,
-						clubId: 3,
-						opponentId: 8,
-						home: false,
-						homeScore: 0,
-						awayScore: 0,
-						cards: 'red',
-						subIn: 15,
-						subOut: null,
-						points: 8
-					}]);
-					return done();
-				});
-			});
-		});
 	});
 });
 
@@ -1138,29 +958,36 @@ describe('getPlayerStats', () => {
 		seasonStart: 2015,
 		goals: 0,
 		clubId: 1,
-		opponentId: 6,
+		opponentId: 13,
 		home: true,
-		homeScore: 2,
-		awayScore: 1,
+		homeScore: 3,
+		awayScore: 2,
+		subOut: 89,
+		points: 8
+	};
+	const returnOneStat = {
+		playerId: 2,
+		goals: 0,
+		home: true,
 		subOut: 89,
 		points: 8
 	};
 
 	describe('library', () => {
 
-		it('should return array of player stats which contain all properties: playerId, gameDay, seasonStart, goals, clubId, home, homeScore, awayScore, subIn, subOut, cards, opponentId, points', () => {
+		it('should return array of player stats which contain all properties: playerId, gameschedule, goals, home, subIn, subOut, cards, points', () => {
 			return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-				gameDay: 3,
 				home: false,
 				subOut: undefined
 			}))
 			.then(() => {
 				return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-					gameDay: 4,
+					gameDay: 3,
 					home: true,
 					points: 0,
 					goals: 3,
-					homeScore: 0,
+					opponentId: 6,
+					homeScore: 3,
 					awayScore: 0
 				}));
 			})
@@ -1172,29 +999,30 @@ describe('getPlayerStats', () => {
 					playerId: 3,
 					clubId: 2,
 					subIn: 15,
-					seasonStart: 2016
+					gameDay: 1,
+					opponentId: 14
 				}));
 			})
 			.then(() => {
 				return dbConnection.getPlayerStats(2);
 			})
-			.should.eventually.all.contain.keys('playerId', 'gameDay', 'seasonStart', 'goals', 'clubId', 'home', 'homeScore', 'awayScore', 'subIn', 'subOut', 'cards', 'opponentId', 'points');
+			.should.eventually.all.contain.keys('playerId', 'gameschedule', 'goals', 'home', 'subIn', 'subOut', 'cards', 'points');
 		});
 
 		it('should have length 3', () => {
 			return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
 					gameDay: 3,
+					opponentId: 15,
 					home: false,
 					subOut: undefined
 				}))
 				.then(() => {
 					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-						gameDay: 4,
+						gameDay: 1,
 						home: true,
+						opponentId: 8,
 						points: 0,
-						goals: 3,
-						homeScore: 0,
-						awayScore: 0
+						goals: 3
 					}));
 				})
 				.then(() => {
@@ -1203,9 +1031,7 @@ describe('getPlayerStats', () => {
 				.then(() => {
 					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
 						playerId: 3,
-						clubId: 2,
-						subIn: 15,
-						seasonStart: 2016
+						subIn: 15
 					}));
 				})
 				.then(() => {
@@ -1219,11 +1045,13 @@ describe('getPlayerStats', () => {
 					gameDay: 3,
 					home: false,
 					subOut: undefined,
-					seasonStart: 2016
+					opponentId: 14
 				}))
 				.then(() => {
 					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-						gameDay: 4,
+						gameDay: 1,
+						opponentId: 18,
+						seasonStart: 2016,
 						home: true,
 						points: 0,
 						goals: 3,
@@ -1237,47 +1065,60 @@ describe('getPlayerStats', () => {
 				.then(() => {
 					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
 						playerId: 3,
-						clubId: 2,
 						subIn: 15,
-						seasonStart: 2016
+						seasonStart: 2015
 					}));
 				})
 				.then(() => {
 					return dbConnection.getPlayerStats(2, 2015);
 				})
 				.should.eventually.eql([
-					Object.assign({}, oneStat, {
-						gameDay: 4,
+					Object.assign({}, returnOneStat, {
+						home: false,
+						cards: null,
+						subIn: null,
+						subOut: null,
+						gameschedule: {
+							gameDay: 3,
+							seasonStart: 2015,
+							homeScore: 3,
+							guestScore: 0,
+							homeClubId: 11,
+							guestClubId: 14
+						}
+					}),
+					Object.assign({}, returnOneStat, {
+						subIn: null,
+						cards: null,
+						gameschedule: {
+							gameDay: 2,
+							seasonStart: 2015,
+							homeScore: 3,
+							guestScore: 2,
+							homeClubId: 16,
+							guestClubId: 13
+						}
+					})
+				]);
+		});
+
+		it('should return all player stats for season 2016 and game day 1', () => {
+			return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+					gameDay: 1,
+					home: false,
+					subOut: undefined,
+					seasonStart: 2016,
+					opponentId: 18
+				}))
+				.then(() => {
+					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
+						gameDay: 1,
 						home: true,
 						points: 0,
 						goals: 3,
 						homeScore: 0,
 						awayScore: 0,
-						cards: null,
-						subIn: null
-					}),
-					Object.assign({}, oneStat, {
-						subIn: null,
-						cards: null
-					})
-				]);
-		});
-
-		it('should return all player stats for season 2016 and game day 3', () => {
-			return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-					gameDay: 3,
-					home: false,
-					subOut: undefined,
-					seasonStart: 2016
-				}))
-				.then(() => {
-					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-						gameDay: 4,
-						home: true,
-						points: 0,
-						goals: 3,
-						homeScore: 0,
-						awayScore: 0
+						opponentId: 12
 					}));
 				})
 				.then(() => {
@@ -1286,74 +1127,50 @@ describe('getPlayerStats', () => {
 				.then(() => {
 					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
 						playerId: 3,
-						clubId: 2,
+						gameDay: 1,
 						subIn: 15,
-						seasonStart: 2016
+						seasonStart: 2016,
+						opponentId: 18
 					}));
 				})
 				.then(() => {
-					return dbConnection.getPlayerStats(2, 2016, 3);
+					return dbConnection.getPlayerStats(2, 2016, 1);
 				})
 				.should.eventually.eql([
-					Object.assign({}, oneStat, {
-						gameDay: 3,
+					Object.assign({}, returnOneStat, {
 						home: false,
 						subOut: null,
-						seasonStart: 2016,
 						subIn: null,
-						cards: null
+						cards: null,
+						gameschedule: {
+							gameDay: 1,
+							seasonStart: 2016,
+							homeScore: 1,
+							guestScore: 1,
+							homeClubId: 6,
+							guestClubId: 18
+						}
 					})
 				]);
-		});
-
-		it('should have length 3', () => {
-			return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-					gameDay: 3,
-					home: false,
-					subOut: undefined
-				}))
-				.then(() => {
-					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-						gameDay: 4,
-						home: true,
-						points: 0,
-						goals: 3,
-						homeScore: 0,
-						awayScore: 0
-					}));
-				})
-				.then(() => {
-					return dbConnection.addPlayerStats(oneStat);
-				})
-				.then(() => {
-					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-						playerId: 3,
-						clubId: 2,
-						subIn: 15,
-						seasonStart: 2016
-					}));
-				})
-				.then(() => {
-					return dbConnection.getPlayerStats(2);
-				})
-				.should.eventually.have.length(3);
 		});
 
 		it('should throw an error when getting stats for game day 3 without mentioning the season start', () => {
 			return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-					gameDay: 3,
-					home: false,
-					subOut: undefined,
-					seasonStart: 2016
-				}))
+				gameDay: 1,
+				home: false,
+				subOut: undefined,
+				seasonStart: 2016,
+				opponentId: 18
+			}))
 				.then(() => {
 					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-						gameDay: 4,
+						gameDay: 1,
 						home: true,
 						points: 0,
 						goals: 3,
 						homeScore: 0,
-						awayScore: 0
+						awayScore: 0,
+						opponentId: 12
 					}));
 				})
 				.then(() => {
@@ -1362,9 +1179,10 @@ describe('getPlayerStats', () => {
 				.then(() => {
 					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
 						playerId: 3,
-						clubId: 2,
+						gameDay: 1,
 						subIn: 15,
-						seasonStart: 2016
+						seasonStart: 2016,
+						opponentId: 18
 					}));
 				})
 				.then(() => {
@@ -1375,19 +1193,21 @@ describe('getPlayerStats', () => {
 
 		it('should throw an error when season start is not a number', () => {
 			return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-					gameDay: 3,
-					home: false,
-					subOut: undefined,
-					seasonStart: 2016
-				}))
+				gameDay: 1,
+				home: false,
+				subOut: undefined,
+				seasonStart: 2016,
+				opponentId: 18
+			}))
 				.then(() => {
 					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-						gameDay: 4,
+						gameDay: 1,
 						home: true,
 						points: 0,
 						goals: 3,
 						homeScore: 0,
-						awayScore: 0
+						awayScore: 0,
+						opponentId: 12
 					}));
 				})
 				.then(() => {
@@ -1396,9 +1216,10 @@ describe('getPlayerStats', () => {
 				.then(() => {
 					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
 						playerId: 3,
-						clubId: 2,
+						gameDay: 1,
 						subIn: 15,
-						seasonStart: 2016
+						seasonStart: 2016,
+						opponentId: 18
 					}));
 				})
 				.then(() => {
@@ -1409,19 +1230,21 @@ describe('getPlayerStats', () => {
 
 		it('should throw an error when game day is not a number', () => {
 			return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-					gameDay: 3,
-					home: false,
-					subOut: undefined,
-					seasonStart: 2016
-				}))
+				gameDay: 1,
+				home: false,
+				subOut: undefined,
+				seasonStart: 2016,
+				opponentId: 18
+			}))
 				.then(() => {
 					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
-						gameDay: 4,
+						gameDay: 1,
 						home: true,
 						points: 0,
 						goals: 3,
 						homeScore: 0,
-						awayScore: 0
+						awayScore: 0,
+						opponentId: 12
 					}));
 				})
 				.then(() => {
@@ -1430,31 +1253,30 @@ describe('getPlayerStats', () => {
 				.then(() => {
 					return dbConnection.addPlayerStats(Object.assign({}, oneStat, {
 						playerId: 3,
-						clubId: 2,
+						gameDay: 1,
 						subIn: 15,
-						seasonStart: 2016
+						seasonStart: 2016,
+						opponentId: 18
 					}));
 				})
 				.then(() => {
 					return dbConnection.getPlayerStats(2, 2016, "3");
 				})
-				.should.eventually.be.rejectedWith(Error, 'One of the parameter gameDay or seasonStart is not a number');
+				.should.eventually.be.rejectedWith(Error, 'Error: One of the parameter gameDay or seasonStart is not a number');
 		});
 	});
 
 	describe('api', () => {
 
-		it('should return array of player stats which contain all properties: playerId, gameDay, seasonStart, goals, clubId, home, homeScore, awayScore, subIn, subOut, cards, points', function(done) {
+		it('should return array of player stats which contain all properties: playerId, gameschedule, goals, home, subIn, subOut, cards, points', function(done) {
 			seneca.error(done);
 			seneca.act({
 					role: 'database',
 					playerStats: 'add',
 					data: Object.assign({}, oneStat, {
-						gameDay: 3,
-						home: false,
-						subOut: undefined,
-						seasonStart: 2016
-					})
+                        home: false,
+                        subOut: undefined
+                    })
 				}, (err, res) => {
 				if(err) return done(err);
 
@@ -1462,13 +1284,14 @@ describe('getPlayerStats', () => {
 					role: 'database',
 					playerStats: 'add',
 					data: Object.assign({}, oneStat, {
-						gameDay: 4,
-						home: true,
-						points: 0,
-						goals: 3,
-						homeScore: 0,
-						awayScore: 0
-					})
+                        gameDay: 3,
+                        home: true,
+                        points: 0,
+                        goals: 3,
+                        opponentId: 6,
+                        homeScore: 3,
+                        awayScore: 0
+                    })
 				}, (err, res) => {
 					if(err) return done(err);
 
@@ -1483,11 +1306,12 @@ describe('getPlayerStats', () => {
 							role: 'database',
 							playerStats: 'add',
 							data: Object.assign({}, oneStat, {
-								playerId: 3,
-								clubId: 2,
-								subIn: 15,
-								seasonStart: 2016
-							})
+                                playerId: 3,
+                                clubId: 2,
+                                subIn: 15,
+                                gameDay: 1,
+                                opponentId: 14
+                            })
 						}, (err, res) => {
 							if(err) return done(err);
 
@@ -1499,7 +1323,7 @@ describe('getPlayerStats', () => {
 								}
 							}, (err, res) => {
 								if(err) return done(err);
-								res.should.all.contain.keys('playerId', 'gameDay', 'seasonStart', 'goals', 'clubId', 'home', 'homeScore', 'awayScore', 'subIn', 'subOut', 'cards', 'points');
+								res.should.all.contain.keys('playerId', 'gameschedule', 'goals', 'home', 'subIn', 'subOut', 'cards', 'points');
 								return done();
 							});
 						});
@@ -1514,11 +1338,11 @@ describe('getPlayerStats', () => {
 				role: 'database',
 				playerStats: 'add',
 				data: Object.assign({}, oneStat, {
-					gameDay: 3,
-					home: false,
-					subOut: undefined,
-					seasonStart: 2016
-				})
+                    gameDay: 3,
+                    opponentId: 15,
+                    home: false,
+                    subOut: undefined
+                })
 			}, (err, res) => {
 				if(err) return done(err);
 
@@ -1526,13 +1350,12 @@ describe('getPlayerStats', () => {
 					role: 'database',
 					playerStats: 'add',
 					data: Object.assign({}, oneStat, {
-						gameDay: 4,
-						home: true,
-						points: 0,
-						goals: 3,
-						homeScore: 0,
-						awayScore: 0
-					})
+                        gameDay: 1,
+                        home: true,
+                        opponentId: 8,
+                        points: 0,
+                        goals: 3
+                    })
 				}, (err, res) => {
 					if(err) return done(err);
 
@@ -1547,11 +1370,9 @@ describe('getPlayerStats', () => {
 							role: 'database',
 							playerStats: 'add',
 							data: Object.assign({}, oneStat, {
-								playerId: 3,
-								clubId: 2,
-								subIn: 15,
-								seasonStart: 2016
-							})
+                                playerId: 3,
+                                subIn: 15
+                            })
 						}, (err, res) => {
 							if(err) return done(err);
 
@@ -1578,11 +1399,11 @@ describe('getPlayerStats', () => {
 				role: 'database',
 				playerStats: 'add',
 				data: Object.assign({}, oneStat, {
-					gameDay: 3,
-					home: false,
-					subOut: undefined,
-					seasonStart: 2016
-				})
+                    gameDay: 3,
+                    home: false,
+                    subOut: undefined,
+                    opponentId: 14
+                })
 			}, (err, res) => {
 				if(err) return done(err);
 
@@ -1590,13 +1411,15 @@ describe('getPlayerStats', () => {
 					role: 'database',
 					playerStats: 'add',
 					data: Object.assign({}, oneStat, {
-						gameDay: 4,
-						home: true,
-						points: 0,
-						goals: 3,
-						homeScore: 0,
-						awayScore: 0
-					})
+                        gameDay: 1,
+                        opponentId: 18,
+                        seasonStart: 2016,
+                        home: true,
+                        points: 0,
+                        goals: 3,
+                        homeScore: 0,
+                        awayScore: 0
+                    })
 				}, (err, res) => {
 					if(err) return done(err);
 
@@ -1610,11 +1433,10 @@ describe('getPlayerStats', () => {
 							role: 'database',
 							playerStats: 'add',
 							data: Object.assign({}, oneStat, {
-								playerId: 3,
-								clubId: 2,
-								subIn: 15,
-								seasonStart: 2016
-							})
+                                playerId: 3,
+                                subIn: 15,
+                                seasonStart: 2015
+                            })
 						}, (err, res) => {
 							if(err) return done(err);
 
@@ -1628,20 +1450,32 @@ describe('getPlayerStats', () => {
 							}, (err, res) => {
 								if(err) return done(err);
 								res.should.eql([
-									Object.assign({}, oneStat, {
-										gameDay: 4,
-										home: true,
-										points: 0,
-										goals: 3,
-										homeScore: 0,
-										awayScore: 0,
-										cards: null,
-										subIn: null
-									}),
-									Object.assign({}, oneStat, {
-										subIn: null,
-										cards: null
-									})
+                                    Object.assign({}, returnOneStat, {
+                                        home: false,
+                                        cards: null,
+                                        subIn: null,
+                                        subOut: null,
+                                        gameschedule: {
+                                            gameDay: 3,
+                                            seasonStart: 2015,
+                                            homeScore: 3,
+                                            guestScore: 0,
+                                            homeClubId: 11,
+                                            guestClubId: 14
+                                        }
+                                    }),
+                                    Object.assign({}, returnOneStat, {
+                                        subIn: null,
+                                        cards: null,
+                                        gameschedule: {
+                                            gameDay: 2,
+                                            seasonStart: 2015,
+                                            homeScore: 3,
+                                            guestScore: 2,
+                                            homeClubId: 16,
+                                            guestClubId: 13
+                                        }
+                                    })
 								]);
 								return done();
 							});
@@ -1652,18 +1486,19 @@ describe('getPlayerStats', () => {
 
 		});
 
-		it('should return all player stats for season 2016 and game day 3', function(done) {
+		it('should return all player stats for season 2016 and game day 1', function(done) {
 
 			seneca.error(done);
 			seneca.act({
 				role: 'database',
 				playerStats: 'add',
 				data: Object.assign({}, oneStat, {
-					gameDay: 3,
-					home: false,
-					subOut: undefined,
-					seasonStart: 2016
-				})
+                    gameDay: 1,
+                    home: false,
+                    subOut: undefined,
+                    seasonStart: 2016,
+                    opponentId: 18
+                })
 			}, (err, res) => {
 				if(err) return done(err);
 
@@ -1671,13 +1506,14 @@ describe('getPlayerStats', () => {
 					role: 'database',
 					playerStats: 'add',
 					data: Object.assign({}, oneStat, {
-						gameDay: 4,
-						home: true,
-						points: 0,
-						goals: 3,
-						homeScore: 0,
-						awayScore: 0
-					})
+                        gameDay: 1,
+                        home: true,
+                        points: 0,
+                        goals: 3,
+                        homeScore: 0,
+                        awayScore: 0,
+                        opponentId: 12
+                    })
 				}, (err, res) => {
 					if(err) return done(err);
 
@@ -1691,11 +1527,12 @@ describe('getPlayerStats', () => {
 							role: 'database',
 							playerStats: 'add',
 							data: Object.assign({}, oneStat, {
-								playerId: 3,
-								clubId: 2,
-								subIn: 15,
-								seasonStart: 2016
-							})
+                                playerId: 3,
+                                gameDay: 1,
+                                subIn: 15,
+                                seasonStart: 2016,
+                                opponentId: 18
+                            })
 						}, (err, res) => {
 							if(err) return done(err);
 
@@ -1705,19 +1542,25 @@ describe('getPlayerStats', () => {
 								data: {
 									playerId: 2,
 									seasonStart: 2016,
-									gameDay: 3
+									gameDay: 1
 								}
 							}, (err, res) => {
 								if(err) return done(err);
 								res.should.eql([
-									Object.assign({}, oneStat, {
-										gameDay: 3,
-										home: false,
-										subOut: null,
-										seasonStart: 2016,
-										subIn: null,
-										cards: null
-									})
+                                    Object.assign({}, returnOneStat, {
+                                        home: false,
+                                        subOut: null,
+                                        subIn: null,
+                                        cards: null,
+                                        gameschedule: {
+                                            gameDay: 1,
+                                            seasonStart: 2016,
+                                            homeScore: 1,
+                                            guestScore: 1,
+                                            homeClubId: 6,
+                                            guestClubId: 18
+                                        }
+                                    })
 								]);
 								return done();
 							});
@@ -1733,7 +1576,7 @@ describe('getPlayerStats', () => {
 describe('addGame', () => {
 	const oneGame = {
 		gameDay: 2,
-		seasonStart: 2015,
+		seasonStart: 2017,
 		homeScore: 1,
 		guestScore: 2,
 		homeClubId: 1,
@@ -1744,85 +1587,95 @@ describe('addGame', () => {
 		it('should add the given game', () => {
 			return dbConnection.addGame(oneGame)
 				.then(() => {
-					return dbConnection.getGames(2015);
-				}).should.eventually.be.eql([oneGame]);
+					return dbConnection.getGames(2017);
+				}).should.eventually.all.contain.property('gameDay', 2)
+                    .and.all.contain.property('seasonStart', 2017)
+                    .and.all.contain.property('homeScore', 1)
+                    .and.all.contain.property('guestScore', 2)
+                    .and.all.contain.property('homeClubId', 1)
+                    .and.all.contain.property('guestClubId', 2);
 		});
 
 		it('should add the given game without scores', () => {
 			return dbConnection.addGame(Object.assign({}, oneGame, { homeScore: undefined, guestScore: undefined }))
 				.then(() => {
-					return dbConnection.getGames(2015);
-				}).should.eventually.be.eql([Object.assign({}, oneGame, { homeScore: null, guestScore: null })]);
+					return dbConnection.getGames(2017);
+				}).should.eventually.all.contain.property('gameDay', 2)
+                    .and.all.contain.property('seasonStart', 2017)
+                    .and.all.contain.property('homeScore', null)
+                    .and.all.contain.property('guestScore', null)
+                    .and.all.contain.property('homeClubId', 1)
+                    .and.all.contain.property('guestClubId', 2);
 		});
 
 		describe('parameter testing', () => {
 			it('should throw an error because gameDay is undefined', () => {
 				return dbConnection.addGame(Object.assign({}, oneGame, { gameDay: undefined }))
 					.then(() => {
-						return dbConnection.getGames(2015);
+						return dbConnection.getGames(2016);
 					}).should.eventually.be.rejectedWith(Error, 'Error: Parameter gameDay is not specified or is not a number');
 			});
 
 			it('should throw an error because gameDay is not a number', () => {
 				return dbConnection.addGame(Object.assign({}, oneGame, { gameDay: "2" }))
 					.then(() => {
-						return dbConnection.getGames(2015);
+						return dbConnection.getGames(2016);
 					}).should.eventually.be.rejectedWith(Error, 'Error: Parameter gameDay is not specified or is not a number');
 			});
 
 			it('should throw an error because seasonStart is undefined', () => {
 				return dbConnection.addGame(Object.assign({}, oneGame, { seasonStart: undefined }))
 					.then(() => {
-						return dbConnection.getGames(2015);
+						return dbConnection.getGames(2016);
 					}).should.eventually.be.rejectedWith(Error, 'Error: Parameter seasonStart is not specified or is not a number');
 			});
 
 			it('should throw an error because seaonsStart is not a number', () => {
 				return dbConnection.addGame(Object.assign({}, oneGame, { seasonStart: "2" }))
 					.then(() => {
-						return dbConnection.getGames(2015);
+						return dbConnection.getGames(2016);
 					}).should.eventually.be.rejectedWith(Error, 'Error: Parameter seasonStart is not specified or is not a number');
 			});
 
 			it('should throw an error because homeClubId is undefined', () => {
 				return dbConnection.addGame(Object.assign({}, oneGame, { homeClubId: undefined }))
 					.then(() => {
-						return dbConnection.getGames(2015);
+						return dbConnection.getGames(2016);
 					}).should.eventually.be.rejectedWith(Error, 'Error: Parameter homeClubId is not specified or is not a number');
 			});
 
 			it('should throw an error because homeClubId is not a number', () => {
 				return dbConnection.addGame(Object.assign({}, oneGame, { homeClubId: "2" }))
 					.then(() => {
-						return dbConnection.getGames(2015);
+						return dbConnection.getGames(2016);
 					}).should.eventually.be.rejectedWith(Error, 'Error: Parameter homeClubId is not specified or is not a number');
 			});
 
 			it('should throw an error because guestClubId is undefined', () => {
 				return dbConnection.addGame(Object.assign({}, oneGame, { guestClubId: undefined }))
 					.then(() => {
-						return dbConnection.getGames(2015);
+						return dbConnection.getGames(2016);
 					}).should.eventually.be.rejectedWith(Error, 'Error: Parameter guestClubId is not specified or is not a number');
 			});
 
 			it('should throw an error because guestClubId is not a number', () => {
 				return dbConnection.addGame(Object.assign({}, oneGame, { guestClubId: "2" }))
 					.then(() => {
-						return dbConnection.getGames(2015);
+						return dbConnection.getGames(2016);
 					}).should.eventually.be.rejectedWith(Error, 'Error: Parameter guestClubId is not specified or is not a number');
 			});
 
 			it('should throw an error because homeScore is not a number', () => {
 				return dbConnection.addGame(Object.assign({}, oneGame, { homeScore: "2" }))
 					.then(() => {
-						return dbConnection.getGames(2015);
+						return dbConnection.getGames(2016);
 					}).should.eventually.be.rejectedWith(Error, 'Error: Parameter homeScore is not a number');
 			});
 
 			it('should throw an error because guestScore is not a number', () => {
 				return dbConnection.addGame(Object.assign({}, oneGame, { guestScore: "2" }))
 					.then(() => {
-						return dbConnection.getGames(2015);
+						return dbConnection.getGames(2016);
 					}).should.eventually.be.rejectedWith(Error, 'Error: Parameter guestScore is not a number');
 			});
 		});
@@ -1853,11 +1706,16 @@ describe('addGame', () => {
 					role: 'database',
 					games: 'get',
 					data: {
-						seasonStart: 2015
+						seasonStart: 2017
 					}
 				}, (err, res) => {
 					if(err) return done(err);
-					res.should.be.eql([oneGame]);
+					res.should.all.contain.property('gameDay', 2)
+                        .and.all.contain.property('seasonStart', 2017)
+                        .and.all.contain.property('homeScore', 1)
+                        .and.all.contain.property('guestScore', 2)
+                        .and.all.contain.property('homeClubId', 1)
+                        .and.all.contain.property('guestClubId', 2);
 					done();
 				});
 			});
@@ -1875,11 +1733,16 @@ describe('addGame', () => {
 					role: 'database',
 					games: 'get',
 					data: {
-						seasonStart: 2015
+						seasonStart: 2017
 					}
 				}, (err, res) => {
 					if(err) return done(err);
-					res.should.be.eql([Object.assign({}, oneGame, { homeScore: null, guestScore: null })]);
+					res.should.all.contain.property('gameDay', 2)
+                        .and.all.contain.property('seasonStart', 2017)
+                        .and.all.contain.property('homeScore', null)
+                        .and.all.contain.property('guestScore', null)
+                        .and.all.contain.property('homeClubId', 1)
+                        .and.all.contain.property('guestClubId', 2);
 					done();
 				});
 			});
