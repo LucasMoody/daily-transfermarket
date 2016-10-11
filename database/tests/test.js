@@ -689,6 +689,36 @@ describe('addPlayerStats', () => {
                 ]);
 		});
 
+		it('should add stats without player being subbed out for football player with id 5', () => {
+			return dbConnection.addPlayerStats(
+				Object.assign({}, playerStatsOne, {
+					playerId: 5,
+					cards: 'red',
+					subOut: undefined,
+					opponentId: 17,
+					home: false
+				})
+			)
+				.then(() => {
+					return dbConnection.getPlayerStats(5);
+				}).should.eventually.eql([
+					Object.assign({}, playerStatsOneResult, {
+						playerId: 5,
+						cards: 'red',
+						subOut: null,
+						home: false,
+						gameschedule: {
+							gameDay: 2,
+							guestClubId: 7,
+							seasonStart: 2015,
+							homeClubId: 17,
+							homeScore: 0,
+							guestScore: 4
+						}
+					})
+				]);
+		});
+
 		describe('parameter testing', () => {
 			it('should throw an error because playerId is undefined', () => {
 				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
@@ -756,7 +786,7 @@ describe('addPlayerStats', () => {
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter home is not specified or is not a boolean');
 			});
 
-			it('should throw an error because home is not a number', () => {
+			it('should throw an error because home is not a boolean', () => {
 				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
 					home: "1"
 				})).should.eventually.be.rejectedWith(Error, 'Error: Parameter home is not specified or is not a boolean');
@@ -816,22 +846,10 @@ describe('addPlayerStats', () => {
 					.should.eventually.be.rejectedWith(Error, 'Error: Parameter subOut is not a number');
 			});
 
-			it('should throw an error because points is not a number', () => {
-				return dbConnection.addPlayerStats({
-						playerId: 1,
-						gameDay: 34,
-						seasonStart: 2014,
-						goals: 2,
-						clubId: 1,
-						opponentId: 8,
-						home: false,
-						homeScore: 0,
-						awayScore: 0,
-						subOut: 80,
-						points: "8",
-						cards: 'red'
-					})
-					.should.eventually.be.rejectedWith(Error, 'Error: Parameter points is not a number');
+			it('should throw an error because cards is not yellow, red or yellow-red', () => {
+				return dbConnection.addPlayerStats(Object.assign({}, playerStatsOne, {
+					cards: "Gelb"
+				})).should.eventually.be.rejectedWith(Error, 'Parameter cards must be either yellow, yellow-red or red');
 			});
 		});
 
@@ -1747,5 +1765,203 @@ describe('addGame', () => {
 				});
 			});
 		});
+	});
+});
+
+describe('getGames', () => {
+	const oneGame = {
+		gameDay: 2,
+		seasonStart: 2017,
+		homeScore: 1,
+		guestScore: 2,
+		homeClubId: 1,
+		guestClubId: 2
+	};
+	describe('library', () => {
+		it('should return two games for season 2017', () => {
+			return dbConnection.addGame(oneGame)
+				.then(() => {
+					return dbConnection.addGame({
+						gameDay: 3,
+						seasonStart: 2017,
+						homeScore: 1,
+						guestScore: 0,
+						homeClubId: 3,
+						guestClubId: 4
+					});
+				})
+				.then(() => {
+					return dbConnection.getGames(2017);
+				}).should.eventually.eql([
+					Object.assign({}, oneGame, {
+						id: 29
+					}),
+					{
+						gameDay: 3,
+						seasonStart: 2017,
+						homeScore: 1,
+						guestScore: 0,
+						homeClubId: 3,
+						guestClubId: 4,
+						id: 30
+					}
+				]);
+		});
+
+		it('should return two games for gameday 3 in season 2017', () => {
+			return dbConnection.addGame(oneGame)
+				.then(() => {
+					return dbConnection.addGame({
+						gameDay: 3,
+						seasonStart: 2017,
+						homeScore: 1,
+						guestScore: 0,
+						homeClubId: 3,
+						guestClubId: 4
+					});
+				})
+				.then(() => {
+					return dbConnection.addGame({
+						gameDay: 3,
+						seasonStart: 2017,
+						homeScore: 0,
+						guestScore: 0,
+						homeClubId: 6,
+						guestClubId: 7
+					});
+				})
+				.then(() => {
+					return dbConnection.getGames(2017, 3);
+				}).should.eventually.eql([
+					{
+						gameDay: 3,
+						seasonStart: 2017,
+						homeScore: 1,
+						guestScore: 0,
+						homeClubId: 3,
+						guestClubId: 4,
+						id: 30
+					},
+					{
+						gameDay: 3,
+						seasonStart: 2017,
+						homeScore: 0,
+						guestScore: 0,
+						homeClubId: 6,
+						guestClubId: 7,
+						id: 31
+					}
+				]);
+		});
+
+		it('should return one game for gameday 3 in season 2017 and opponent team with id 7', () => {
+			return dbConnection.addGame(oneGame)
+				.then(() => {
+					return dbConnection.addGame({
+						gameDay: 3,
+						seasonStart: 2017,
+						homeScore: 1,
+						guestScore: 0,
+						homeClubId: 3,
+						guestClubId: 4
+					});
+				})
+				.then(() => {
+					return dbConnection.addGame({
+						gameDay: 3,
+						seasonStart: 2017,
+						homeScore: 0,
+						guestScore: 0,
+						homeClubId: 6,
+						guestClubId: 7
+					});
+				})
+				.then(() => {
+					return dbConnection.getGames(2017, 3, 7, true);
+				}).should.eventually.eql([
+					{
+						gameDay: 3,
+						seasonStart: 2017,
+						homeScore: 0,
+						guestScore: 0,
+						homeClubId: 6,
+						guestClubId: 7,
+						id: 31
+					}
+				]);
+		});
+
+		it('should return one game for gameday 3 in season 2017 and opponent team with id 3', () => {
+			return dbConnection.addGame(oneGame)
+				.then(() => {
+					return dbConnection.addGame({
+						gameDay: 3,
+						seasonStart: 2017,
+						homeScore: 1,
+						guestScore: 0,
+						homeClubId: 3,
+						guestClubId: 4
+					});
+				})
+				.then(() => {
+					return dbConnection.addGame({
+						gameDay: 3,
+						seasonStart: 2017,
+						homeScore: 0,
+						guestScore: 0,
+						homeClubId: 6,
+						guestClubId: 7
+					});
+				})
+				.then(() => {
+					return dbConnection.getGames(2017, 3, 3, false);
+				}).should.eventually.eql([
+					{
+						gameDay: 3,
+						seasonStart: 2017,
+						homeScore: 1,
+						guestScore: 0,
+						homeClubId: 3,
+						guestClubId: 4,
+						id: 30
+					}
+				]);
+		});
+
+		describe('parameter testing', () => {
+			it('should throw an error because seasonStart is undefined', () => {
+				return dbConnection.getGames()
+					.should.eventually.be.rejectedWith(Error, 'Error: Parameter seasonStart is not specified or is not a number');
+			});
+
+			it('should throw an error because seasonStart is not a number', () => {
+				return dbConnection.getGames("2016")
+					.should.eventually.be.rejectedWith(Error, 'Error: Parameter seasonStart is not specified or is not a number');
+			});
+
+			it('should throw an error because gameDay is not a number', () => {
+				return dbConnection.getGames(2016, "3")
+					.should.eventually.be.rejectedWith(Error, 'Error: Parameter gameDay is not specified or is not a number');
+			});
+
+			it('should throw an error because opponentId is not a number', () => {
+				return dbConnection.getGames(2016, 3, "3", true)
+					.should.eventually.be.rejectedWith(Error, 'Error: Parameter opponentId is not specified or is not a number');
+			});
+
+			it('should throw an error because isHome is undefined', () => {
+				return dbConnection.getGames(2016, 3, 3)
+					.should.eventually.be.rejectedWith(Error, 'Error: Parameter isHome is not specified or is not a boolean');
+			});
+
+			it('should throw an error because isHome is not a boolean', () => {
+				return dbConnection.getGames(2016, 3, 3, "true")
+					.should.eventually.be.rejectedWith(Error, 'Error: Parameter isHome is not specified or is not a boolean');
+			});
+		});
+	});
+
+	describe('api', () => {
+
 	});
 });

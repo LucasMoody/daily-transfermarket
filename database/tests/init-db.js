@@ -35,7 +35,8 @@ function clearDatabase() {
 
 function initModels() {
     const models = require('../models.js');
-    return models.functions.sync()
+    // with force = true so that all data is deleted
+    return models.functions.sync(true)
         .then(() => initClubs(models.Clubs))
         .then(() => initPlayers(models.Players))
         .then(() => initMatches(models.GameSchedule));

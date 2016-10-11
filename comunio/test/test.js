@@ -63,6 +63,9 @@ describe('#getPlayersByClubId(clubId)', function() {
     it('should return an array of players where all elements have the properties id, clubid, position, name, points, quote, status, rankedgamesnumber', function() {
         return comunio.getPlayersByClubId('12').should.eventually.all.contain.keys('id', 'clubid', 'position', 'name', 'points', 'quote', 'status', 'rankedgamesnumber');
     });
+    it('should should be rejected because the club id does not exist', function() {
+        return comunio.getPlayersByClubId('1000').should.eventually.be.rejectedWith(Error);
+    });
 });
 
 describe('#getCommunityMarket(communityId)', function() {

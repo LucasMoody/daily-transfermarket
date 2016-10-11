@@ -39,11 +39,12 @@ function getPlayerValuesForToday () {
 				return previous;
 			}, {});
 
-			Q.all(
+			Q.allSettled(
 				res
 					.map(item => item.comclubid)
 					.map(clubId => comunio.getPlayersByClubId(clubId))
 				)
+				.then(promises => promises.filter(promise => promise.state == 'fulfilled').map(promise => promise.value))
 				.then(clubsWithPlayers => clubsWithPlayers.reduce((previous, next) => previous.concat(next), []))
 				.then(players => {
 					players.forEach(player => {

@@ -226,18 +226,7 @@ function lookUpPlayerId (comPlayerId) {
  * @param {PlayerStat} playerStat - stat which should be added
  * @returns {*|Promise} - A promise of the database transaction
  */
-function addPlayerStats (playerStat) {
-    const playerId = playerStat.playerId;
-    const gameDay = playerStat.gameDay;
-    const seasonStart = playerStat.seasonStart;
-    const goals = playerStat.goals;
-    const home = playerStat.home;
-    const cards = playerStat.cards;
-    const opponentId = playerStat.opponentId;
-    const subIn = playerStat.subIn;
-    const subOut = playerStat.subOut;
-    const points = playerStat.points;
-//function addPlayerStats ({playerId, gameDay, seasonStart, goals, clubId, home, homeScore, awayScore, cards, subIn, subOut, points}) {
+function addPlayerStats ({playerId, gameDay, seasonStart, goals, home, cards, opponentId, subIn, subOut, points}) {
     if (playerId == null || typeof playerId !== "number") return Promise.reject(new Error('Parameter playerId is not specified or is not a number'));
     if (gameDay ==null || typeof gameDay !== "number") return Promise.reject(new Error('Parameter gameDay is not specified or is not a number'));
     if (seasonStart == null || typeof seasonStart !== "number") return Promise.reject(new Error('Parameter seasonStart is not specified or is not a number'));
@@ -248,7 +237,7 @@ function addPlayerStats (playerStat) {
     if (subIn != null && typeof subIn !== "number") return Promise.reject(new Error('Parameter subIn is not a number'));
     if (subOut != null && typeof subOut !== "number") return Promise.reject(new Error('Parameter subOut is not a number'));
     if (points != null && typeof points !== "number") return Promise.reject(new Error('Parameter points is not a number'));
-    return getGames(seasonStart, gameDay, opponentId)
+    return getGames(seasonStart, gameDay, opponentId, home)
         .then(games => {
             if(games.length == 0) return Promise.reject(new Error('Could not find a game with seasonStart: ' + seasonStart + ", gameDay: " + gameDay + " and with oponnentId: " + opponentId));
             return models.PlayerStats.findOrCreate(
@@ -389,15 +378,18 @@ function addGame(game) {
  * @param {number} seasonStart - starting year of the season of which the games will be returned
  * @param {number} [gameDay] - games' game day
  * @param {number} [guestClubId] - games' game day
+ * @param {number} [opponentId] - id of opponent
+ * @param {boolean} [isHome] - if opponent is playing as a guest (isHome=true) or as a host (isHome=false)
  * @returns {*|Promise.<Game[]>} promise of the games
  */
-function getGames(seasonStart, gameDay, guestClubId) {
+function getGames(seasonStart, gameDay, opponentId, isHome) {
     if(checkIfNumber(seasonStart)) return noExistenceOrNoNumberRejection("seasonStart");
     if(gameDay) {
         if(checkIfNumber(gameDay)) return noExistenceOrNoNumberRejection("gameDay");
-        else if(guestClubId) {
-            if(checkIfNumber(guestClubId)) return noExistenceOrNoNumberRejection("guestClubId");
-            else return models.GameSchedule.findAll({ where : { gameday: gameDay, seasonstart: seasonStart, guestclubid: guestClubId}, attributes: gameScheduleAttributes})
+        else if(opponentId) {
+            if(checkIfNumber(opponentId)) return noExistenceOrNoNumberRejection("opponentId");
+            if(checkIfBoolean(isHome)) return noExistenceOrNoBooleanRejection('isHome');
+            return models.GameSchedule.findAll({ where : { gameday: gameDay, seasonstart: seasonStart, [isHome ? "guestclubid" : "homeclubid"]: opponentId}, attributes: gameScheduleAttributes})
                 .then(games => games.map(game => game.toJSON()));
         } else
             return models.GameSchedule.findAll({ where : { gameday: gameDay, seasonstart: seasonStart }, attributes: gameScheduleAttributes})
@@ -409,11 +401,19 @@ function getGames(seasonStart, gameDay, guestClubId) {
 }
 
 function checkIfNumber(number) {
-    return number == null || typeof number !== "number"
+    return number == null || typeof number !== "number";
+}
+
+function checkIfBoolean(boolean) {
+    return boolean == null || typeof boolean !== "boolean";
 }
 
 function noExistenceOrNoNumberRejection(parameter) {
     return Promise.reject(new Error('Parameter ' + parameter + ' is not specified or is not a number'));
+}
+
+function noExistenceOrNoBooleanRejection(parameter) {
+    return Promise.reject(new Error('Parameter ' + parameter + ' is not specified or is not a boolean'));
 }
 
 function noNumberRejection(parameter) {

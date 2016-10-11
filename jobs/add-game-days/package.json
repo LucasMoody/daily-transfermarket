@@ -1,0 +1,9 @@
+{
+  "name": "add-game-days",
+  "version": "0.1.0",
+  "dependencies": {
+    "comunio": "file:../../comunio/",
+    "request-promise": "^4.1.1",
+    "seneca": "*"
+  }
+}

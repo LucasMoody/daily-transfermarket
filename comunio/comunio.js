@@ -70,7 +70,7 @@ function getPlayersByClubId(id, callback) {
 		if (callback != undefined) callback(players);
 		return players;
 	}).catch(function(err) {
-		if (callback == undefined) return err;
+		if (callback == undefined) throw err;
 		else callback(err);
 	});
 };

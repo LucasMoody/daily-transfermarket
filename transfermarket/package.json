@@ -1,9 +1,6 @@
 {
   "dependencies": {
-    "seneca": "~0.6.4",
-    "q": "~1.4.1",
-    "moment": "~2.10.6",
-    "soap": "~0.9.1",
-    "comunio": "file:../comunio/comunio"
+    "comunio": "file:../comunio/",
+    "seneca": "^3.2.1"
   }
 }

@@ -92,8 +92,8 @@ PlayerStats.belongsTo(GameSchedule, { foreignKey: 'gamedayid'});
 	});
 }*/
 
-function sync() {
-	return sequelize.sync({force:true});
+function sync(force) {
+	return sequelize.sync({force:!!force});
 };
 //TODO catch
 

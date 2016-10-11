@@ -21,6 +21,7 @@ module.exports = function database(options) {
 	this.add('role:database,playerValues:getAll', getAllPlayerValues);
 	this.add('role:database,playerStats:get', getPlayerStats);
 	this.add('role:database,playerStats:add', addPlayerStats);
+	this.add('role:database,playerStats:addAll', addAllPlayerStats);
 	this.add('role:database,game:add', addGame);
 	this.add('role:database,games:get', getGames);
 }
@@ -125,7 +126,7 @@ function addPlayerValues (msg, respond) {
 function lookUpPlayerId (msg, respond) {
 	if(!msg.data)
 		return respond(new Error('data property must be defined and it should contain the comPlayerId'));
-	const comPlayerId = msg.comPlayerId;
+	const comPlayerId = msg.data.comPlayerId;
 	if (!comPlayerId)
 		return respond(new Error('Please specify the comPlayerId property in the data property of the message'));
 	dbConnection.lookUpPlayerId(comPlayerId)
@@ -150,11 +151,8 @@ function addPlayerStats (msg, respond) {
 	const gameDay = msg.data.gameDay;
 	const seasonStart = msg.data.seasonStart;
 	const goals = msg.data.goals;
-	const clubId = msg.data.clubId;
 	const opponentId = msg.data.opponentId;
 	const home = msg.data.home;
-	const homeScore = msg.data.homeScore;
-	const awayScore = msg.data.awayScore;
 	const cards = msg.data.cards;
 	const subIn = msg.data.subIn;
 	const subOut = msg.data.subOut;
@@ -166,7 +164,7 @@ function addPlayerStats (msg, respond) {
 	if (goals == null || typeof goals !== "number") return respond(new Error('Parameter goals is not specified or is not a number'));
 	if (!opponentId || typeof opponentId !== "number") return respond(new Error('Parameter opponentId is not specified or is not a number'));
 	if (typeof(home) !== "boolean") return respond(new Error('Parameter home is not specified or is not a boolean'));
-	if (cards && !(cards === "red" || cards === "yellow" || cards === "yellow-red")) return respond(new Error('Parameter cards must be either yellow, yellow-red or red'));
+	if (cards && !(cards === "red" || cards === "yellow" || cards === "yellow-red")) return respond(new Error('Parameter cards must be either yellow, yellow-red or red but is ' + cards));
 	if (subIn != null && typeof subIn !== "number") return respond(new Error('Parameter subIn is not a number'));
 	if (subOut != null && typeof subOut !== "number") return respond(new Error('Parameter subOut is not a number'));
 	if (points != null && typeof points !== "number") return respond(new Error('Parameter points is not a number'));
@@ -183,6 +181,13 @@ function addPlayerStats (msg, respond) {
 		subOut,
 		points
 	})
+		.then(status => respond(undefined, status))
+		.catch(err => respond(err));
+}
+
+function addAllPlayerStats (msg, respond) {
+	if(!msg.data) return respond(new Error('data property must be defined and it should contain the comPlayerId'));
+	Promise.all(msg.data.map(playerStat => dbConnection.addPlayerStats(playerStat)))
 		.then(status => respond(undefined, status))
 		.catch(err => respond(err));
 }

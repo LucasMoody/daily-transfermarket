@@ -27,6 +27,8 @@ function initClubs() {
 	promises.push(Clubs.findOrCreate({ where: { clubname: 'Hamburger SV', comclubid: 4 } }));
 	promises.push(Clubs.findOrCreate({ where: { clubname: 'FC Ingolstadt 04', comclubid: 90 } }));
 	promises.push(Clubs.findOrCreate({ where: { clubname: 'SV Darmstadt 98', comclubid: 89 } }));
+	promises.push(Clubs.findOrCreate({ where: { clubname: 'RB Leipzig', comclubid: 92 } }));
+	promises.push(Clubs.findOrCreate({ where: { clubname: 'SC Freibug', comclubid: 21 } }));
 	return Q.all(promises);
 }
 function initPlayers() {
